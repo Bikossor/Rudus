@@ -1,14 +1,12 @@
 export const regex = (searchString: RegExp) => (input: string) => {
-  // TODO (al): Actually check with the regex
-  const asString = searchString.toString();
-  const matched = input.startsWith(asString);
+  const execArr = searchString.exec(input);
 
-  if (!matched) return;
+  if (execArr === null) throw new Error(`Could not match RegExp "${searchString}"`);
 
-  const nextInput = input.slice(asString.length);
+  const nextInput = input.slice(execArr[0].length);
 
   return {
-    match: searchString,
+    match: execArr[0],
     nextInput
   }
 }
