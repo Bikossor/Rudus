@@ -1,12 +1,19 @@
-const { string } = require('./dist/parser/index');
+const { regex, whitespace } = require('./dist/parser/index');
 const { sequenceOf } = require('./dist/combinators/sequenceOf');
 
-const helloWorldParser = sequenceOf([
-  string('Hello'),
-  string(' '),
-  string('world'),
+const variableDeclarationParser = sequenceOf([
+  regex(/var|const|let/),
+  whitespace(),
+  regex(/\S+/),
+  whitespace(),
+  regex(/\=/),
+  whitespace(),
+  regex(/\"/),
+  regex(/[A-Za-z]+/),
+  regex(/\"/),
+  regex(/\;/),
 ]);
 
 console.log(
-  helloWorldParser('Hello world')
+  variableDeclarationParser('const test = "Test";')
 );
