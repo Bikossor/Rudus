@@ -2,19 +2,18 @@ import { ParserResult } from "../ParserResult";
 
 export const sequenceOf = (parsers: Array<any>) => (input: string) => {
   const results: Array<ParserResult> = [];
-  let lastInput = input;
+  let i = 0;
+  let lastParserResult: ParserResult;
+  let nextInput = input;
 
-  parsers.forEach((parser) => {
-    if (lastInput !== undefined) {
-      const parsed = parser(lastInput);
-      lastInput = parsed.nextInput;
-      results.push({
-        match: parsed.match,
-        nextInput: parsed.nextInput,
-        isError: parsed.isError,
-      });
-    }
-  });
+  do {
+    lastParserResult = parsers[i](nextInput);
+    nextInput = lastParserResult.nextInput;
+
+    results.push(lastParserResult);
+
+    i++;
+  } while (i < parsers.length && !lastParserResult.isError);
 
   return results;
 };
