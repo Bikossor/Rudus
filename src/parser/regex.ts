@@ -1,4 +1,6 @@
-export const regex = (searchString: RegExp) => (input: string) => {
+import { ParserResult } from "../ParserResult";
+
+export const regex = (searchString: RegExp) => (input: string): ParserResult => {
   const execArr = searchString.exec(input);
 
   if (execArr === null) throw new Error(`Could not match RegExp "${searchString}"`);
@@ -7,6 +9,7 @@ export const regex = (searchString: RegExp) => (input: string) => {
 
   return {
     match: execArr[0],
-    nextInput
+    nextInput,
+    isError: execArr === null,
   }
 }

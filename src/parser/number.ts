@@ -1,4 +1,6 @@
-export const number = (searchString: number) => (input: string) => {
+import { ParserResult } from "../ParserResult";
+
+export const number = (searchString: number) => (input: string): ParserResult => {
   const asString = searchString.toString();
   const matched = input.startsWith(asString);
 
@@ -7,7 +9,8 @@ export const number = (searchString: number) => (input: string) => {
   const nextInput = input.slice(asString.length);
 
   return {
-    match: searchString,
-    nextInput
+    match: searchString.toString(),
+    nextInput,
+    isError: !matched,
   }
 }

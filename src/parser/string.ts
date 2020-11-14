@@ -1,4 +1,6 @@
-export const string = (searchString: string) => (input: string) => {
+import { ParserResult } from "../ParserResult";
+
+export const string = (searchString: string) => (input: string): ParserResult => {
   const matched = input.startsWith(searchString);
 
   if (!matched) return;
@@ -7,6 +9,7 @@ export const string = (searchString: string) => (input: string) => {
 
   return {
     match: searchString,
-    nextInput
+    nextInput,
+    isError: !matched,
   }
 }
