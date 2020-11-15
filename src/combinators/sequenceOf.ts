@@ -1,7 +1,6 @@
 import { ParserResult } from "../ParserResult";
 
-export const sequenceOf = (parsers: Array<any>) => (input: string) => {
-  const results: Array<ParserResult> = [];
+export const sequenceOf = (parsers: Array<any>) => (input: string): ParserResult => {
   let i = 0;
   let lastParserResult: ParserResult;
   let nextInput = input;
@@ -10,10 +9,8 @@ export const sequenceOf = (parsers: Array<any>) => (input: string) => {
     lastParserResult = parsers[i](nextInput);
     nextInput = lastParserResult.nextInput;
 
-    results.push(lastParserResult);
-
     i++;
   } while (i < parsers.length && !lastParserResult.isError);
 
-  return results;
+  return lastParserResult;
 };
