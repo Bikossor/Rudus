@@ -1,21 +1,19 @@
-import { ParserResult } from "../ParserResult";
+import { ParserState } from "../ParserState";
 
-export const regex = (searchString: RegExp) => (input: string): ParserResult => {
-  const execArr = searchString.exec(input);
+export const regex = (searchString: RegExp) => (state: ParserState): ParserState => {
+  const execArr = searchString.exec(state.input.slice(state.offset));
 
-  if (execArr === null)
+  if (execArr === null) {
     return {
-      match: "",
+      ...state,
       isError: true,
-      nextInput: "",
       errorMessage: `Failed to match ${searchString}`,
     };
-
-  const nextInput = input.slice(execArr[0].length);
+  }
 
   return {
-    match: execArr[0],
-    nextInput,
-    isError: execArr === null,
-  }
-}
+    ...state,
+    offset: state.offset + execArr[0].length,
+    result: execArr[0],
+  };
+};

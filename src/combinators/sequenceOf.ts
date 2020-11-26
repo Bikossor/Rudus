@@ -1,16 +1,28 @@
-import { ParserResult } from "../ParserResult";
+import { ParserState } from "../ParserState";
 
-export const sequenceOf = (parsers: Array<any>) => (input: string): ParserResult => {
+type LikeParser = (state: ParserState) => ParserState;
+
+export const sequenceOf = (parsers: Array<LikeParser>) => (state: ParserState): ParserState => {
   let i = 0;
-  let lastParserResult: ParserResult;
-  let nextInput = input;
+  let results: Array<string> = [];
+  let nextState: ParserState = state;
 
   do {
-    lastParserResult = parsers[i](nextInput);
-    nextInput = lastParserResult.nextInput;
+    nextState = parsers[i](nextState);
+    results.push(nextState.result as string);
+
+    if (nextState.isError) {
+      return {
+        ...state,
+        ...nextState
+      }
+    }
 
     i++;
-  } while (i < parsers.length && !lastParserResult.isError);
+  } while (i < parsers.length && !nextState.isError);
 
-  return lastParserResult;
+  return {
+    ...state,
+    result: results,
+  };
 };

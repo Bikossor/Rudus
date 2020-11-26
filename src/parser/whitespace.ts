@@ -1,6 +1,7 @@
+import { ParserState } from "../ParserState";
 import { regex } from "./regex"
 
-export const whitespace = () => (input: string) => {
+export const whitespace = () => (state: ParserState) => {
   const parser = regex(/\s+/);
-  return parser(input);
+  return parser(state);
 }
