@@ -15,9 +15,5 @@ const variableDeclarationParser = sequenceOf([
 ]);
 
 console.log(
-  variableDeclarationParser({
-    input: 'const test = "Test";',
-    offset: 0,
-    result: null,
-  })
+  variableDeclarationParser.run('const test = "Test";')
 );

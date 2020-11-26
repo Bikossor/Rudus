@@ -1,18 +1,15 @@
-import { ParserState } from "../ParserState";
+import { Parser } from "../Parser";
+import { ParserState, updateParserError, updateParserState } from "../ParserState";
 
-export const string = (searchString: string) => (state: ParserState): ParserState => {
+export const string = (searchString: string) => new Parser((state: ParserState): ParserState => {
   const matched = state.input.startsWith(searchString);
 
   if (!matched)
-    return {
-      ...state,
-      isError: true,
-      errorMessage: `Failed to match ${searchString}`,
-    };
+    return updateParserError(state, `Failed to match ${searchString}`);
 
-  return {
-    ...state,
-    offset: state.offset + searchString.length,
-    result: searchString,
-  }
-}
+  return updateParserState(
+    state,
+    state.offset + searchString.length,
+    searchString
+  );
+});
