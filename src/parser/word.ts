@@ -3,15 +3,15 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
 
 export const word = () => new Parser((state: ParserState): ParserState => {
   const regexWord = /\w+/;
-  const execArr = regexWord.exec(state.input.slice(state.offset));
+  const [fullMatch] = regexWord.exec(state.input.slice(state.offset));
 
-  if (execArr === null) {
+  if (fullMatch === null) {
     return updateParserError(state, `Failed to match ${regexWord}`);
   }
 
   return updateParserState(
     state,
-    state.offset + execArr[0].length,
-    execArr[0]
+    state.offset + fullMatch.length,
+    fullMatch
   );
 });
