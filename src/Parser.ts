@@ -1,4 +1,4 @@
-import { LikeParser } from "./combinators/sequenceOf";
+import { LikeParser } from "./LikeParser";
 import { ParserState, updateParserResult } from "./ParserState";
 
 export class Parser {

@@ -1,8 +1,6 @@
 import { Parser } from "../Parser";
 import { ParserState, updateParserResult } from "../ParserState";
 
-export type LikeParser = (state: ParserState) => ParserState;
-
 export const sequenceOf = (parsers: Array<Parser>) => new Parser((state: ParserState): ParserState => {
   let i = 0;
   let results: Array<string> = [];
