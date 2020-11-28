@@ -12,3 +12,4 @@ Parser combinator library for TypeScript
 
 ### Combinators
 - `sequenceOf`
+- `many`
