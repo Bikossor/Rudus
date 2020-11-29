@@ -1,7 +1,7 @@
 import { whitespace } from "../../src/parser/whitespace";
 import { ParserState } from "../../src/ParserState";
 
-describe('string', () => {
+describe('whitespace', () => {
   test('Parse a matchable input', () => {
     const parser = whitespace();
 
