@@ -6,7 +6,7 @@ export const whitespace = () => new Parser((state: ParserState): ParserState => 
   const [fullMatch] = regexWhitespace.exec(state.input.slice(state.offset)) || [null];
 
   if (fullMatch === null) {
-    return updateParserError(state, `Failed to match ${regexWhitespace}`);
+    return updateParserError(state, `Failed to match whitespace ${regexWhitespace} at offset ${state.offset}`);
   }
 
   return updateParserState(

@@ -5,7 +5,7 @@ export const regex = (searchString: RegExp) => new Parser((state: ParserState): 
   const [fullMatch] = searchString.exec(state.input.slice(state.offset)) || [null];
 
   if (fullMatch === null) {
-    return updateParserError(state, `Failed to match ${searchString}`);
+    return updateParserError(state, `Failed to match regex ${searchString} at offset ${state.offset}`);
   }
 
   return updateParserState(

@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserResult } from "../ParserState";
+import { ParserState, updateParserError, updateParserResult } from "../ParserState";
 
 export const sequenceOf = (parsers: Array<Parser>) => new Parser((state: ParserState): ParserState => {
   let i = 0;
@@ -11,10 +11,7 @@ export const sequenceOf = (parsers: Array<Parser>) => new Parser((state: ParserS
     results.push(nextState.result as string);
 
     if (nextState.isError) {
-      return {
-        ...state,
-        ...nextState
-      }
+      return updateParserError(nextState, nextState.errorMessage);
     }
 
     i++;

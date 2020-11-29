@@ -5,7 +5,7 @@ export const string = (searchString: string) => new Parser((state: ParserState):
   const matched = state.input.slice(state.offset).startsWith(searchString);
 
   if (!matched)
-    return updateParserError(state, `Failed to match ${searchString}`);
+    return updateParserError(state, `Failed to match string ${searchString} at offset ${state.offset}`);
 
   return updateParserState(
     state,
