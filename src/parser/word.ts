@@ -6,7 +6,7 @@ export const word = () => new Parser((state: ParserState): ParserState => {
   const [fullMatch] = regexWord.exec(state.input.slice(state.offset)) || [null];
 
   if (fullMatch === null) {
-    return updateParserError(state, `Failed to match ${regexWord}`);
+    return updateParserError(state, `Failed to match word ${regexWord} at offset ${state.offset}`);
   }
 
   return updateParserState(

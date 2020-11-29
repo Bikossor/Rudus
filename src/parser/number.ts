@@ -5,8 +5,9 @@ export const number = (searchString: number) => new Parser((state: ParserState):
   const asString = searchString.toString();
   const matched = state.input.startsWith(asString);
 
-  if (!matched)
-    return updateParserError(state, `Failed to match ${searchString}`);
+  if (!matched) {
+    return updateParserError(state, `Failed to match number ${searchString} at offset ${state.offset}`);
+  }
 
   return updateParserState(
     state,
