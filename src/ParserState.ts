@@ -1,7 +1,9 @@
+import { ParserStateResult } from "./ParserStateResult";
+
 export type ParserState = {
   offset: number;
   input: string;
-  result: unknown;
+  result: ParserStateResult;
   isError: boolean;
   errorMessage?: string;
 };
@@ -11,7 +13,7 @@ export type ParserState = {
 export const updateParserState = (
   state: ParserState,
   offset: number,
-  result: unknown
+  result: ParserStateResult
 ): ParserState => ({
   ...state,
   offset,
@@ -20,7 +22,7 @@ export const updateParserState = (
 
 export const updateParserResult = (
   state: ParserState,
-  result: unknown
+  result: ParserStateResult
 ): ParserState => ({
   ...state,
   result,
