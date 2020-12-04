@@ -1,4 +1,5 @@
 import { LikeParser } from "./LikeParser";
+import { ParserStateResult } from "./ParserStateResult";
 import { ParserState, updateParserResult } from "./ParserState";
 
 export class Parser {
@@ -17,7 +18,7 @@ export class Parser {
     })
   }
 
-  map(callback: (parserState: ParserState) => unknown) {
+  map(callback: (parserState: ParserState) => ParserStateResult) {
     return new Parser(parserState => {
       const nextState = this.transformState(parserState);
       return updateParserResult(nextState, callback(nextState));
