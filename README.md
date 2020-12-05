@@ -14,6 +14,8 @@ Parser combinator library for TypeScript
   - Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`)
 - `word`
   - Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`)
+- `endOfInput`
+  - Checks if there is nothing left to parse otherwise it fails
 
 ### Combinators
 - `sequenceOf`
