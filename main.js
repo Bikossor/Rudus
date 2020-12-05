@@ -1,4 +1,4 @@
-const { regex, whitespace, word } = require('./dist/parser/index');
+const { regex, whitespace, word, endOfInput } = require('./dist/parser/index');
 const { sequenceOf } = require('./dist/combinators/sequenceOf');
 
 const variableDeclarationParser = sequenceOf([
@@ -12,8 +12,9 @@ const variableDeclarationParser = sequenceOf([
   word(),
   regex(/\"/),
   regex(/\;/),
+  endOfInput(),
 ]);
 
 console.log(
-  variableDeclarationParser.run('const test = "Test";')
+  variableDeclarationParser.run('const test = "Test";    ')
 );
