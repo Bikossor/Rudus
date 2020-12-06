@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
