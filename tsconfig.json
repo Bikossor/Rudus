@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
     "declaration": true,
+    "declarationDir": "dist/types",
     "outDir": "dist",
+    "types": [
+      "@types/node",
+      "@types/jest",
+    ],
+    "moduleResolution": "Node",
   },
   "exclude": [
     "tests/**/*.ts",
