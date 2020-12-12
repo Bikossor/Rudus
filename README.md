@@ -1,5 +1,11 @@
-# Railgun
-Parser combinator library for TypeScript
+<p align="center">
+  <img src="./docs/assets/Railgun-Logo.svg" style="height: 120px;"/>
+</p>
+
+<h1 align="center">Railgun</h1>
+<p align="center">Parser combinator library for TypeScript.</p>
+
+<p>&nbsp;</p>
 
 ## API
 
