@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Parser combinator library for TypeScript",
   "main": "dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json"
