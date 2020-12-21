@@ -1,5 +1,9 @@
 import { Parser } from "../Parser";
 import { updateParserResult, updateParserError } from "../ParserState";
+/**
+ * Accepts a single parser, which must match at least once or infinite times otherwise it fails.
+ * @param parser
+ */
 export const many1 = (parser) => new Parser((state) => {
     let results = [];
     let nextState = state;

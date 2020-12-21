@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.whitespace = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
+ */
 var whitespace = function () { return new Parser_1.Parser(function (state) {
     var regexWhitespace = /\s+/;
     var fullMatch = (regexWhitespace.exec(state.input.slice(state.offset)) || [null])[0];

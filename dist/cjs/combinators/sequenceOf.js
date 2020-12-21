@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sequenceOf = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.
+ * @param parsers
+ */
 var sequenceOf = function (parsers) { return new Parser_1.Parser(function (state) {
     var i = 0;
     var results = [];

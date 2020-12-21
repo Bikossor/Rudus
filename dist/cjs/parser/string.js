@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.string = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Tries to match a given string.
+ * @param searchString
+ */
 var string = function (searchString) { return new Parser_1.Parser(function (state) {
     var matched = state.input.slice(state.offset).startsWith(searchString);
     if (!matched)
