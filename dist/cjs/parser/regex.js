@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.regex = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Tries to match a given regex.
+ * @param searchString
+ */
 var regex = function (searchString) { return new Parser_1.Parser(function (state) {
     var fullMatch = (searchString.exec(state.input.slice(state.offset)) || [null])[0];
     if (fullMatch === null) {

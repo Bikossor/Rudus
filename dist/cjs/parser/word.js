@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.word = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`).
+ */
 var word = function () { return new Parser_1.Parser(function (state) {
     var regexWord = /\w+/;
     var fullMatch = (regexWord.exec(state.input.slice(state.offset)) || [null])[0];

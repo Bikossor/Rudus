@@ -1,5 +1,9 @@
 import { Parser } from "../Parser";
 import { updateParserError, updateParserResult } from "../ParserState";
+/**
+ * Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.
+ * @param parsers
+ */
 export const sequenceOf = (parsers) => new Parser((state) => {
     let i = 0;
     let results = [];

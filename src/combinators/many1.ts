@@ -2,6 +2,10 @@ import { Parser } from "../Parser";
 import { ParserStateResult } from "../ParserStateResult";
 import { ParserState, updateParserResult, updateParserError } from "../ParserState";
 
+/**
+ * Accepts a single parser, which must match at least once or infinite times otherwise it fails.
+ * @param parser
+ */
 export const many1 = (parser: Parser) => new Parser((state: ParserState): ParserState => {
   let results: Array<ParserStateResult> = [];
   let nextState: ParserState = state;

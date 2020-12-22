@@ -1,6 +1,10 @@
 import { Parser } from "../Parser";
 import { ParserState, updateParserError, updateParserState } from "../ParserState";
 
+/**
+ * Tries to match a given number.
+ * @param searchString
+ */
 export const number = (searchString: number) => new Parser((state: ParserState): ParserState => {
   const asString = searchString.toString();
   const matched = state.input.startsWith(asString);

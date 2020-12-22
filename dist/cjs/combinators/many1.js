@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.many1 = void 0;
 var Parser_1 = require("../Parser");
 var ParserState_1 = require("../ParserState");
+/**
+ * Accepts a single parser, which must match at least once or infinite times otherwise it fails.
+ * @param parser
+ */
 var many1 = function (parser) { return new Parser_1.Parser(function (state) {
     var results = [];
     var nextState = state;

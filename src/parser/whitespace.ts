@@ -1,6 +1,9 @@
 import { Parser } from "../Parser";
 import { ParserState, updateParserError, updateParserState } from "../ParserState";
 
+/**
+ * Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
+ */
 export const whitespace = () => new Parser((state: ParserState): ParserState => {
   const regexWhitespace = /\s+/;
   const [fullMatch] = regexWhitespace.exec(state.input.slice(state.offset)) || [null];

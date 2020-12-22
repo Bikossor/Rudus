@@ -1,5 +1,9 @@
 import { Parser } from "../Parser";
 import { updateParserError, updateParserState } from "../ParserState";
+/**
+ * Tries to match a given string.
+ * @param searchString
+ */
 export const string = (searchString) => new Parser((state) => {
     const matched = state.input.slice(state.offset).startsWith(searchString);
     if (!matched)
