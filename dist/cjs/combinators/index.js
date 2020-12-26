@@ -12,4 +12,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./many"), exports);
 __exportStar(require("./many1"), exports);
+__exportStar(require("./separatedBy"), exports);
 __exportStar(require("./sequenceOf"), exports);
