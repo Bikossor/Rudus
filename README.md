@@ -30,3 +30,6 @@
   - Accepts a single parser, which may match zero or infinite times.
 - `many1`
   - Accepts a single parser, which must match at least once or infinite times otherwise it fails.
+- `separatedBy`
+  - Tries to match a given `value` separated by a given `separator`
+  - Only captures the `value`
