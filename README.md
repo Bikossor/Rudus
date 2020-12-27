@@ -33,3 +33,5 @@
 - `separatedBy`
   - Tries to match a given `value` separated by a given `separator`
   - Only captures the `value`
+- `anyOf`
+  - Tries to match all `parsers` and returns the first successful one.
