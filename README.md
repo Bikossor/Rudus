@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/assets/Railgun-Logo.svg" height="120px"/>
+  <img src="./docs/assets/Rudus-Logo.svg" height="120px"/>
 </p>
 
 <h1 align="center">Rudus</h1>
