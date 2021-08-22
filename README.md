@@ -2,7 +2,7 @@
   <img src="./docs/assets/Railgun-Logo.svg" height="120px"/>
 </p>
 
-<h1 align="center">Railgun</h1>
+<h1 align="center">Rudus</h1>
 <p align="center">Parser combinator library for TypeScript.</p>
 
 <p>&nbsp;</p>
