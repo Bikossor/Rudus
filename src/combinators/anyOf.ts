@@ -1,5 +1,5 @@
-import { Parser } from "../Parser";
-import { ParserState, updateParserResult } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserState, updateParserResult } from "ParserState";
 
 /**
  * Tries to match all `parsers` and returns the first successful one.

@@ -1,3 +1,3 @@
-import { ParserState } from "./ParserState";
+import { ParserState } from "ParserState";
 
 export type LikeParser = (state: ParserState) => ParserState;

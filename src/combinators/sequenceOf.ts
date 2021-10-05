@@ -1,6 +1,6 @@
-import { Parser } from "../Parser";
-import { ParserStateResult } from "../ParserStateResult";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserStateResult } from "ParserStateResult";
+import { ParserState, updateParserError, updateParserResult } from "ParserState";
 
 /**
  * Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.

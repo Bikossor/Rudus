@@ -1,6 +1,6 @@
-import { LikeParser } from "./LikeParser";
-import { ParserStateResult } from "./ParserStateResult";
-import { ParserState, updateParserResult } from "./ParserState";
+import { LikeParser } from "LikeParser";
+import { ParserStateResult } from "ParserStateResult";
+import { ParserState, updateParserResult } from "ParserState";
 
 export class Parser {
   transformState: LikeParser;

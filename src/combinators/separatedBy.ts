@@ -1,5 +1,5 @@
-import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserState, updateParserError, updateParserResult } from "ParserState";
 
 /**
  * - Tries to match a given `value` separated by a given `separator`

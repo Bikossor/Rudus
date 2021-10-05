@@ -1,6 +1,6 @@
-import { Parser } from "../Parser";
-import { ParserStateResult } from "../ParserStateResult";
-import { ParserState, updateParserResult, updateParserError } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserStateResult } from "ParserStateResult";
+import { ParserState, updateParserResult, updateParserError } from "ParserState";
 
 /**
  * Accepts a single parser, which must match at least once or infinite times otherwise it fails.

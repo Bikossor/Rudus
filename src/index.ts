@@ -1,2 +1,2 @@
-export * from "./combinators/index";
-export * from "./parser/index";
+export * from "combinators/index";
+export * from "parser/index";

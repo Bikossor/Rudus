@@ -1,5 +1,5 @@
-import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserState, updateParserError, updateParserState } from "ParserState";
 
 /**
  * Tries to match a given number.

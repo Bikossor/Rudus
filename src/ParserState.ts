@@ -1,4 +1,4 @@
-import { ParserStateResult } from "./ParserStateResult";
+import { ParserStateResult } from "ParserStateResult";
 
 export type ParserState = {
   offset: number;

@@ -1,5 +1,5 @@
-import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserState, updateParserError, updateParserState } from "ParserState";
 
 /**
  * Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`).

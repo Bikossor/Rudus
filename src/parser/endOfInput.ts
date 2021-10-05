@@ -1,5 +1,5 @@
-import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { Parser } from "Parser";
+import { ParserState, updateParserError, updateParserResult } from "ParserState";
 
 /**
  * Checks if there is nothing left to parse otherwise it fails.
