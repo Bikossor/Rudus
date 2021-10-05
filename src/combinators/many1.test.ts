@@ -1,6 +1,6 @@
-import { many1 } from "../../src/combinators/many1";
-import { string } from "../../src/parser/index";
-import { ParserState } from "../../src/ParserState";
+import { many1 } from "../combinators/index";
+import { string } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('many1', () => {
   test('Parse a matchable input', () => {

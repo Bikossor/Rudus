@@ -1,9 +1,9 @@
-import { string } from "../../src/parser/string";
-import { ParserState } from "../../src/ParserState";
+import { word } from "../parser/index";
+import { ParserState } from "../ParserState";
 
-describe('string', () => {
+describe('word', () => {
   test('Parse a matchable input', () => {
-    const parser = string('Hello');
+    const parser = word();
 
     const result = parser.run('Hello');
 
@@ -16,14 +16,14 @@ describe('string', () => {
   });
 
   test('Parse a not matchable input', () => {
-    const parser = string('Hello');
+    const parser = word();
 
-    const result = parser.run('World');
+    const result = parser.run(' ');
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'World',
+      input: ' ',
       isError: true,
-      errorMessage: 'Failed to match string Hello at offset 0',
+      errorMessage: 'Failed to match word /\\w+/ at offset 0',
       offset: 0,
       result: null,
     })

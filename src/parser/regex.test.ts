@@ -1,5 +1,5 @@
-import { regex } from "../../src/parser/regex";
-import { ParserState } from "../../src/ParserState";
+import { regex } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('regex', () => {
   test('Parse a matchable input', () => {

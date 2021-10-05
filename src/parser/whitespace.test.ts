@@ -1,5 +1,5 @@
-import { whitespace } from "../../src/parser/whitespace";
-import { ParserState } from "../../src/ParserState";
+import { whitespace } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('whitespace', () => {
   test('Parse a matchable input', () => {
