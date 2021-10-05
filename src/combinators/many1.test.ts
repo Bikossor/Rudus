@@ -1,4 +1,4 @@
-import { many1 } from "../combinators/many1";
+import { many1 } from "../combinators/index";
 import { string } from "../parser/index";
 import { ParserState } from "../ParserState";
 

@@ -1,5 +1,4 @@
-import { anyOf } from "./anyOf";
-import { many } from "./many";
+import { anyOf, many } from "./";
 import { string } from "../parser/index";
 import { ParserState } from "../ParserState";
 

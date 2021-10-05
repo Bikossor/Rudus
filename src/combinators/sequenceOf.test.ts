@@ -1,4 +1,4 @@
-import { sequenceOf } from "../combinators/sequenceOf";
+import { sequenceOf } from "../combinators/index";
 import { string, whitespace } from "../parser/index";
 import { ParserState } from "../ParserState";
 

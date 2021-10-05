@@ -1,4 +1,4 @@
-import { regex } from "../parser/regex";
+import { regex } from "../parser/index";
 import { ParserState } from "../ParserState";
 
 describe('regex', () => {

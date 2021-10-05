@@ -1,4 +1,4 @@
-import { word } from "../parser/word";
+import { word } from "../parser/index";
 import { ParserState } from "../ParserState";
 
 describe('word', () => {

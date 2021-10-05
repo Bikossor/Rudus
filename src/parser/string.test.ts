@@ -1,4 +1,4 @@
-import { string } from "../parser/string";
+import { string } from "../parser/index";
 import { ParserState } from "../ParserState";
 
 describe('string', () => {
