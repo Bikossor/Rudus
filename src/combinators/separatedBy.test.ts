@@ -1,6 +1,6 @@
-import { separatedBy, many } from "../../src/combinators/index";
-import { regex, word } from "../../src/parser/index";
-import { ParserState } from "../../src/ParserState";
+import { separatedBy, many } from "../combinators/index";
+import { regex, word } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('separatedBy', () => {
   test('Parse a matchable input', () => {

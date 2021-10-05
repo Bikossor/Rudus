@@ -1,5 +1,5 @@
-import { word } from "../../src/parser/word";
-import { ParserState } from "../../src/ParserState";
+import { word } from "../parser/word";
+import { ParserState } from "../ParserState";
 
 describe('word', () => {
   test('Parse a matchable input', () => {

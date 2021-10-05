@@ -1,6 +1,6 @@
-import { sequenceOf } from "../../src/combinators/sequenceOf";
-import { string, whitespace } from "../../src/parser/index";
-import { ParserState } from "../../src/ParserState";
+import { sequenceOf } from "../combinators/sequenceOf";
+import { string, whitespace } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('sequenceOf', () => {
   test('Parse a matchable input', () => {
