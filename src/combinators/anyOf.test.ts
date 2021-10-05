@@ -1,7 +1,6 @@
-import { anyOf } from "../../src/combinators/anyOf";
-import { many } from "../../src/combinators/many";
-import { string } from "../../src/parser/index";
-import { ParserState } from "../../src/ParserState";
+import { anyOf, many } from "./";
+import { string } from "../parser/index";
+import { ParserState } from "../ParserState";
 
 describe('anyOf', () => {
   test('Parse a matchable input', () => {

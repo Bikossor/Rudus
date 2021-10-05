@@ -1,5 +1,5 @@
-import { number } from "../../src/parser/number";
-import { ParserState } from "../../src/ParserState";
+import { number } from "./number";
+import { ParserState } from "../ParserState";
 
 describe('number', () => {
   test('Parse a matchable input', () => {
