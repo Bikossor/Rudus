@@ -4,17 +4,17 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
 /**
  * Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
  */
-export const whitespace = () => new Parser((state: ParserState): ParserState => {
-  const regexWhitespace = /\s+/;
-  const [fullMatch] = regexWhitespace.exec(state.input.slice(state.offset)) || [null];
+export const whitespace = () =>
+  new Parser((state: ParserState): ParserState => {
+    const regexWhitespace = /\s+/;
+    const [fullMatch] = regexWhitespace.exec(state.input.slice(state.offset)) || [null];
 
-  if (fullMatch === null) {
-    return updateParserError(state, `Failed to match whitespace ${regexWhitespace} at offset ${state.offset}`);
-  }
+    if (fullMatch === null) {
+      return updateParserError(
+        state,
+        `Failed to match whitespace ${regexWhitespace} at offset ${state.offset}`,
+      );
+    }
 
-  return updateParserState(
-    state,
-    state.offset + fullMatch.length,
-    fullMatch
-  );
-});
+    return updateParserState(state, state.offset + fullMatch.length, fullMatch);
+  });

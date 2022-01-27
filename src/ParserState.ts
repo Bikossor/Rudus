@@ -13,7 +13,7 @@ export type ParserState = {
 export const updateParserState = (
   state: ParserState,
   offset: number,
-  result: ParserStateResult
+  result: ParserStateResult,
 ): ParserState => ({
   ...state,
   offset,
@@ -22,7 +22,7 @@ export const updateParserState = (
 
 export const updateParserResult = (
   state: ParserState,
-  result: ParserStateResult
+  result: ParserStateResult,
 ): ParserState => ({
   ...state,
   result,
@@ -30,7 +30,7 @@ export const updateParserResult = (
 
 export const updateParserError = (
   state: ParserState,
-  errorMessage: string
+  errorMessage: string,
 ): ParserState => ({
   ...state,
   isError: true,

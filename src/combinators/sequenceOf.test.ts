@@ -2,43 +2,31 @@ import { sequenceOf } from "../combinators/index";
 import { string, whitespace } from "../parser/index";
 import { ParserState } from "../ParserState";
 
-describe('sequenceOf', () => {
-  test('Parse a matchable input', () => {
-    const parser = sequenceOf([
-      string('Hello'),
-      whitespace(),
-      string('world'),
-    ]);
+describe("sequenceOf", () => {
+  test("Parse a matchable input", () => {
+    const parser = sequenceOf([string("Hello"), whitespace(), string("world")]);
 
-    const result = parser.run('Hello world');
+    const result = parser.run("Hello world");
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'Hello world',
+      input: "Hello world",
       isError: false,
       offset: 11,
-      result: [
-        'Hello',
-        ' ',
-        'world',
-      ],
-    })
+      result: ["Hello", " ", "world"],
+    });
   });
 
-  test('Parse a not matchable input', () => {
-    const parser = sequenceOf([
-      string('Hello'),
-      whitespace(),
-      string('world'),
-    ]);
+  test("Parse a not matchable input", () => {
+    const parser = sequenceOf([string("Hello"), whitespace(), string("world")]);
 
-    const result = parser.run('Helloworld');
+    const result = parser.run("Helloworld");
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'Helloworld',
+      input: "Helloworld",
       isError: true,
-      errorMessage: 'Failed to match whitespace /\\s+/ at offset 5',
+      errorMessage: "Failed to match whitespace /\\s+/ at offset 5",
       offset: 5,
-      result: 'Hello',
-    })
+      result: "Hello",
+    });
   });
 });

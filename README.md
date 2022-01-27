@@ -10,6 +10,7 @@
 ## API
 
 ### Parsers
+
 - `number`
   - Tries to match a given number
 - `string`
@@ -24,6 +25,7 @@
   - Checks if there is nothing left to parse otherwise it fails
 
 ### Combinators
+
 - `sequenceOf`
   - Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.
 - `many`

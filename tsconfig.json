@@ -3,14 +3,8 @@
     "declaration": true,
     "declarationDir": "dist/types",
     "outDir": "dist",
-    "types": [
-      "@types/node",
-      "@types/jest",
-    ],
-    "moduleResolution": "Node",
+    "types": ["@types/node", "@types/jest"],
+    "moduleResolution": "Node"
   },
-  "exclude": [
-    "**/*.test.ts",
-    "dist/",
-  ],
+  "exclude": ["**/*.test.ts", "dist/"]
 }
