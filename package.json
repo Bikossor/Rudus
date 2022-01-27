@@ -6,7 +6,9 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json"
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+    "prettier:write": "npx prettier --write .",
+    "prettier:check": "npx prettier --check ."
   },
   "repository": {
     "type": "git",
