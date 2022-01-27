@@ -5,15 +5,15 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
  * Tries to match a given string.
  * @param searchString
  */
-export const string = (searchString: string) => new Parser((state: ParserState): ParserState => {
-  const matched = state.input.slice(state.offset).startsWith(searchString);
+export const string = (searchString: string) =>
+  new Parser((state: ParserState): ParserState => {
+    const matched = state.input.slice(state.offset).startsWith(searchString);
 
-  if (!matched)
-    return updateParserError(state, `Failed to match string ${searchString} at offset ${state.offset}`);
+    if (!matched)
+      return updateParserError(
+        state,
+        `Failed to match string ${searchString} at offset ${state.offset}`,
+      );
 
-  return updateParserState(
-    state,
-    state.offset + searchString.length,
-    searchString
-  );
-});
+    return updateParserState(state, state.offset + searchString.length, searchString);
+  });

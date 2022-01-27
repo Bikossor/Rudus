@@ -15,7 +15,7 @@ export class Parser {
       isError: false,
       offset: 0,
       result: null,
-    })
+    });
   }
 
   map(callback: (parserState: ParserState) => ParserStateResult) {

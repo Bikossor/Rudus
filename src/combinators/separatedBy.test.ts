@@ -2,96 +2,72 @@ import { separatedBy, many } from "../combinators/index";
 import { regex, word } from "../parser/index";
 import { ParserState } from "../ParserState";
 
-describe('separatedBy', () => {
-  test('Parse a matchable input', () => {
-    const parser = separatedBy(
-      word(),
-      regex(/\,/),
-    );
+describe("separatedBy", () => {
+  test("Parse a matchable input", () => {
+    const parser = separatedBy(word(), regex(/\,/));
 
-    const result = parser.run('Hello,');
+    const result = parser.run("Hello,");
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'Hello,',
+      input: "Hello,",
       isError: false,
       offset: 6,
-      result: 'Hello',
-    })
+      result: "Hello",
+    });
   });
 
-  test('Parse many matchable inputs', () => {
-    const parser = many(
-      separatedBy(
-        word(),
-        regex(/\,/),
-      )
-    );
+  test("Parse many matchable inputs", () => {
+    const parser = many(separatedBy(word(), regex(/\,/)));
 
-    const result = parser.run('Hello,world,this,is,a,test,');
+    const result = parser.run("Hello,world,this,is,a,test,");
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'Hello,world,this,is,a,test,',
+      input: "Hello,world,this,is,a,test,",
       isError: false,
       offset: 27,
-      result: [
-        'Hello',
-        'world',
-        'this',
-        'is',
-        'a',
-        'test',
-      ],
-    })
+      result: ["Hello", "world", "this", "is", "a", "test"],
+    });
   });
 
-  test('Parse a not matchable input (no separator)', () => {
-    const parser = separatedBy(
-      word(),
-      regex(/\,/),
-    );
+  test("Parse a not matchable input (no separator)", () => {
+    const parser = separatedBy(word(), regex(/\,/));
 
-    const result = parser.run('Hello');
+    const result = parser.run("Hello");
 
     expect(result).toStrictEqual<ParserState>({
-      input: 'Hello',
+      input: "Hello",
       isError: true,
-      errorMessage: 'separatedBy: separator parser failed to match at offset 5',
+      errorMessage: "separatedBy: separator parser failed to match at offset 5",
       offset: 0,
       result: null,
-    })
+    });
   });
 
-  test('Parse a not matchable input (no separator; wrong value)', () => {
-    const parser = separatedBy(
-      regex(/[a-zA-Z]+/),
-      regex(/\,/),
-    );
+  test("Parse a not matchable input (no separator; wrong value)", () => {
+    const parser = separatedBy(regex(/[a-zA-Z]+/), regex(/\,/));
 
-    const result = parser.run('2011');
+    const result = parser.run("2011");
 
     expect(result).toStrictEqual<ParserState>({
-      input: '2011',
+      input: "2011",
       isError: true,
-      errorMessage: 'separatedBy: value parser failed to match at offset 0',
+      errorMessage: "separatedBy: value parser failed to match at offset 0",
       offset: 0,
       result: null,
-    })
+    });
   });
 
-  test('Parse a not matchable input (wrong value)', () => {
-    const parser = separatedBy(
-      regex(/[a-zA-Z]+/),
-      regex(/\,/),
-    );
+  test("Parse a not matchable input (wrong value)", () => {
+    const parser = separatedBy(regex(/[a-zA-Z]+/), regex(/\,/));
 
-    const result = parser.run('2011,');
+    const result = parser.run("2011,");
 
     expect(result).toStrictEqual<ParserState>({
-      input: '2011,',
+      input: "2011,",
       isError: true,
-      errorMessage: 'separatedBy: value parser failed to match at offset 0',
+      errorMessage: "separatedBy: value parser failed to match at offset 0",
       offset: 0,
       result: null,
-    })
+    });
   });
 });
