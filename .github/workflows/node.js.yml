@@ -15,7 +15,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        # (2022-01-27)
+        # v12: Maintenance LTS (end-of-life: 2022-04-30)
+        # v14: Maintenance LTS (end-of-life: 2023-04-30)
+        # v16: Active LTS (end-of-life: 2024-04-30)
+        # v17: Current (end-of-life: 2022-06-01)
+        node-version: [12.x, 14.x, 16.x, 17.x]
 
     steps:
       - uses: actions/checkout@v2
