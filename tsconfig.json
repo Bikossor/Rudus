@@ -4,7 +4,8 @@
     "declarationDir": "dist/types",
     "outDir": "dist",
     "types": ["@types/node", "@types/jest"],
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "esModuleInterop": true
   },
   "exclude": ["**/*.test.ts", "dist/"]
 }
