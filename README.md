@@ -5,6 +5,11 @@
 <h1 align="center">Rudus</h1>
 <p align="center">Parser combinator library for TypeScript.</p>
 
+<p align="center">
+  <img src="https://github.com/Bikossor/Rudus/actions/workflows/codeql-analysis.yml/badge.svg"/>
+  <img src="https://github.com/Bikossor/Rudus/actions/workflows/node.js.yml/badge.svg"/>
+</p>
+
 <p>&nbsp;</p>
 
 ## API
