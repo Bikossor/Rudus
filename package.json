@@ -2,6 +2,9 @@
   "name": "rudus",
   "version": "v1.0.0-alpha.1",
   "description": "Parser combinator library for TypeScript",
+  "files": [
+    "dist/"
+  ],
   "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
