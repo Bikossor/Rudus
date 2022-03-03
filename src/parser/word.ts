@@ -12,7 +12,7 @@ export const word = () =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match word ${regexWord} at offset ${state.offset}`,
+        `Failed to match word ${regexWord.toString()} at offset ${state.offset.toString()}`,
       );
     }
 
