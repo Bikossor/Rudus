@@ -12,7 +12,7 @@ export const whitespace = () =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match whitespace ${regexWhitespace} at offset ${state.offset}`,
+        `Failed to match whitespace ${regexWhitespace.toString()} at offset ${state.offset.toString()}`,
       );
     }
 

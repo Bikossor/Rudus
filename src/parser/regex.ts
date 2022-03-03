@@ -12,7 +12,7 @@ export const regex = (searchString: RegExp) =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match regex ${searchString} at offset ${state.offset}`,
+        `Failed to match regex ${searchString.toString()} at offset ${state.offset.toString()}`,
       );
     }
 
