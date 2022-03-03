@@ -9,7 +9,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
 export const sequenceOf = (parsers: Array<Parser>) =>
   new Parser((state: ParserState): ParserState => {
     let i = 0;
-    let results: Array<ParserStateResult> = [];
+    const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;
 
     do {
