@@ -8,12 +8,12 @@ import { ParserState, updateParserResult } from "../ParserState";
  */
 export const many = (parser: Parser) =>
   new Parser((state: ParserState): ParserState => {
-    let results: Array<ParserStateResult> = [];
+    const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;
     let done = false;
 
     while (!done) {
-      let testState = parser.transformState(nextState);
+      const testState = parser.transformState(nextState);
 
       if (!testState.isError) {
         results.push(testState.result);
