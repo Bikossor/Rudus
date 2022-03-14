@@ -8,18 +8,23 @@ import { ParserState, updateParserResult } from "../ParserState";
  */
 export const many = (parser: Parser) =>
   new Parser((state: ParserState): ParserState => {
+    if (state.isError) return state;
+
     const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;
-    let done = false;
 
-    while (!done) {
+    while (true) {
       const testState = parser.transformState(nextState);
 
       if (!testState.isError) {
         results.push(testState.result);
         nextState = testState;
+
+        if (nextState.offset >= nextState.input.length) {
+          break;
+        }
       } else {
-        done = true;
+        break;
       }
     }
 
