@@ -6,7 +6,8 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
  */
 export const endOfLine = () =>
   new Parser((state: ParserState): ParserState => {
-    const [fullMatch] = /(\r\n|\r|\n)/.exec(state.input.slice(state.offset)) || [null];
+    const endOfLineRegex = new RegExp(/(\r\n|\r|\n)/);
+    const [fullMatch] = endOfLineRegex.exec(state.input.slice(state.offset)) || [null];
 
     if (fullMatch === null) {
       return updateParserError(
