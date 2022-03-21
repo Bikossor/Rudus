@@ -1,8 +1,8 @@
 version = 1
+test_patterns = [
+  "*.test.ts"
+]
 
 [[analyzers]]
 name = "javascript"
 enabled = true
-test_patterns = [
-  "*.test.ts"
-]
