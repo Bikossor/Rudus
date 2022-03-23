@@ -28,6 +28,8 @@
   - Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`)
 - `endOfInput`
   - Checks if there is nothing left to parse otherwise it fails
+- `lazy`
+  - Takes a function that just returns a parser _(a thunk)_. This defers the evaluation of the given parser. Useful for writing recursive parsers.
 
 ### Combinators
 
