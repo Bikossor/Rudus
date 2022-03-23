@@ -1,5 +1,5 @@
 import { many } from "./many";
-import { string } from "../parser/index";
+import { string } from "../parsers";
 import { ParserState } from "../ParserState";
 
 describe("many", () => {

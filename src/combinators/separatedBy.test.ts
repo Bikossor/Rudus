@@ -1,5 +1,5 @@
 import { separatedBy, many } from "../combinators/index";
-import { regex, word } from "../parser/index";
+import { regex, word } from "../parsers";
 import { ParserState } from "../ParserState";
 
 describe("separatedBy", () => {

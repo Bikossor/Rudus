@@ -1,5 +1,5 @@
 import { anyOf, many, separatedBy } from "../combinators";
-import { lazy, regex, string } from "../parser/index";
+import { lazy, regex, string } from ".";
 import { ParserState } from "../ParserState";
 
 describe("lazy", () => {
