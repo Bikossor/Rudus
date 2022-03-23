@@ -1,5 +1,5 @@
 import { sequenceOf } from "../combinators/index";
-import { string, whitespace } from "../parser/index";
+import { string, whitespace } from "../parsers";
 import { ParserState } from "../ParserState";
 
 describe("sequenceOf", () => {

@@ -1,4 +1,4 @@
-import { whitespace } from "../parser/index";
+import { whitespace } from "./whitespace";
 import { ParserState } from "../ParserState";
 
 describe("whitespace", () => {

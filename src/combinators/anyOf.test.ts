@@ -1,5 +1,5 @@
 import { anyOf, many } from "./";
-import { string } from "../parser/index";
+import { string } from "../parsers";
 import { ParserState } from "../ParserState";
 
 describe("anyOf", () => {
