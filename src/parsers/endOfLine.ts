@@ -2,7 +2,7 @@ import { Parser } from "../Parser";
 import { ParserState, updateParserError, updateParserState } from "../ParserState";
 
 /**
- * Tries to match an end of line.
+ * Tries to match an end of line (either `\r\n`, `\r` or `\n`)
  */
 export const endOfLine = () =>
   new Parser((state: ParserState): ParserState => {
