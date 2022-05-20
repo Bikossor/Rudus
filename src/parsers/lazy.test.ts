@@ -6,7 +6,8 @@ describe("lazy", () => {
   test("Parse a matchable input", () => {
     const value = lazy(() => anyOf([numbers, strings, matchArray]));
 
-    const commaSeparatedValue = separatedBy(value, string(","));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const commaSeparatedValue = commaSeparated(value);
 
     const numbers = regex(/[0-9]+/);
     const strings = regex(/[A-Z]+/);

@@ -1,10 +1,11 @@
 import { separatedBy, many } from "../combinators/index";
-import { regex, word } from "../parsers";
+import { regex, string, word } from "../parsers";
 import { ParserState } from "../ParserState";
 
 describe("separatedBy", () => {
   test("Parse a matchable input", () => {
-    const parser = separatedBy(word(), regex(/\,/));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = commaSeparated(word());
 
     const result = parser.run("Hello,");
 
@@ -17,7 +18,8 @@ describe("separatedBy", () => {
   });
 
   test("Parse many matchable inputs", () => {
-    const parser = many(separatedBy(word(), regex(/\,/)));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = many(commaSeparated(word()));
 
     const result = parser.run("Hello,world,this,is,a,test,");
 
@@ -30,7 +32,8 @@ describe("separatedBy", () => {
   });
 
   test("Parse a not matchable input (no separator)", () => {
-    const parser = separatedBy(word(), regex(/\,/));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = commaSeparated(word());
 
     const result = parser.run("Hello");
 
@@ -44,7 +47,8 @@ describe("separatedBy", () => {
   });
 
   test("Parse a not matchable input (no separator; wrong value)", () => {
-    const parser = separatedBy(regex(/[a-zA-Z]+/), regex(/\,/));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = commaSeparated(regex(/[a-zA-Z]+/));
 
     const result = parser.run("2011");
 
@@ -58,7 +62,8 @@ describe("separatedBy", () => {
   });
 
   test("Parse a not matchable input (wrong value)", () => {
-    const parser = separatedBy(regex(/[a-zA-Z]+/), regex(/\,/));
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = commaSeparated(regex(/[a-zA-Z]+/));
 
     const result = parser.run("2011,");
 
