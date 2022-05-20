@@ -7,7 +7,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
  * @param value
  * @param separator
  */
-export const separatedBy = (value: Parser, separator: Parser) =>
+export const separatedBy = (separator: Parser) => (value: Parser) =>
   new Parser((state: ParserState): ParserState => {
     //#region value: Parser
     const valueParserState = value.transformState(state);
