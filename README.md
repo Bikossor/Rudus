@@ -46,3 +46,5 @@
   - Only captures the `value`
 - `anyOf`
   - Tries to match all `parsers` and returns the first successful one.
+- `optional`
+  - The given `parser` may or may not match. This combinator can not fail.
