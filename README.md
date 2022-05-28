@@ -48,3 +48,5 @@
   - Tries to match all `parsers` and returns the first successful one.
 - `optional`
   - The given `parser` may or may not match. This combinator can not fail.
+- `between`
+  - Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
