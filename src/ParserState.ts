@@ -3,7 +3,7 @@ import { ParserStateResult } from "./ParserStateResult";
 export type ParserState = {
   offset: number;
   input: string;
-  result: ParserStateResult;
+  result: ParserStateResult | null;
   isError: boolean;
   errorMessage?: string;
 };
