@@ -1,1 +1,1 @@
-export type ParserStateResult = string | ParserStateResult[];
+export type ParserStateResult = string | null | ParserStateResult[];
