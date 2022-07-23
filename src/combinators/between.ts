@@ -41,6 +41,9 @@ export const between =
       }
       //#endregion
 
-      // INFO (Bikossor): We just want to capture the result of the inner parser.
-      return updateParserResult(outerRightParserState, innerParserState.result);
+      return updateParserResult(outerRightParserState, [
+        outerLeftParserState.result,
+        innerParserState.result,
+        outerRightParserState.result,
+      ]);
     });
