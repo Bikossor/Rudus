@@ -1,4 +1,5 @@
 import { Parser } from "../Parser";
+import { updateParserResult } from "../ParserState";
 
 /**
  * The given `parser` may or may not match. This combinator can not fail.
@@ -11,7 +12,7 @@ export const optional = (parser: Parser): Parser => {
     const nextState = parser.transformState(currentState);
 
     // If the given parser can not match return the current state.
-    if (nextState.isError) return currentState;
+    if (nextState.isError) return updateParserResult(currentState, null);
 
     // If the given parser can match return the transformed state.
     return nextState;
