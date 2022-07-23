@@ -13,7 +13,7 @@ describe("between", () => {
       input: '"Hello"',
       isError: false,
       offset: 7,
-      result: "Hello",
+      result: ['"', "Hello", '"'],
     });
   });
 
@@ -27,7 +27,7 @@ describe("between", () => {
       input: "(Hello)",
       isError: false,
       offset: 7,
-      result: "Hello",
+      result: ["(", "Hello", ")"],
     });
   });
 
