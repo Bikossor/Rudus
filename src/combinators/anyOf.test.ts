@@ -37,7 +37,7 @@ describe("anyOf", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "Test",
       isError: true,
-      errorMessage: "Failed to match string Hello at offset 0",
+      errorMessage: "anyOf: unable to match any given parser",
       offset: 0,
       result: null,
     });
