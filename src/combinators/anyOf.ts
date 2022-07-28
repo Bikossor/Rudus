@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserResult } from "../ParserState";
+import { ParserState, updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Tries to match all `parsers` and returns the first successful one.
@@ -7,7 +7,7 @@ import { ParserState, updateParserResult } from "../ParserState";
  */
 export const anyOf = (parsers: Array<Parser>) =>
   new Parser((state: ParserState): ParserState => {
-    let furthestState: ParserState = null;
+    if (state.isError) return state;
 
     for (const parser of parsers) {
       const currentState = parser.transformState(state);
@@ -15,11 +15,7 @@ export const anyOf = (parsers: Array<Parser>) =>
       if (!currentState.isError) {
         return updateParserResult(currentState, currentState.result);
       }
-
-      if (!furthestState || furthestState.offset < currentState.offset) {
-        furthestState = currentState;
-      }
     }
 
-    return updateParserResult(furthestState, furthestState.result);
+    return updateParserError(state, "anyOf: unable to match any given parser");
   });
