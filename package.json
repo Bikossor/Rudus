@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/Bikossor/Rudus/issues"
   },
-  "homepage": "https://github.com/Bikossor/Rudus#readme",
+  "homepage": "https://rudus.pages.dev",
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "jest": "^27.4.7",
