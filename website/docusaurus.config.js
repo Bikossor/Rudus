@@ -69,7 +69,6 @@ const config = {
             position: "left",
             label: "Documentation",
           },
-          { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://npmjs.com/package/rudus",
             label: "npm",
@@ -106,10 +105,6 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/Bikossor/Rudus",
