@@ -9,7 +9,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
 export const number = (searchString: number) =>
   new Parser((state: ParserState): ParserState => {
     const asString = searchString.toString();
-    const matched = state.input.startsWith(asString);
+    const matched = state.input.slice(state.offset).startsWith(asString);
 
     if (!matched) {
       return updateParserError(
