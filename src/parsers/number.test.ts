@@ -1,17 +1,21 @@
-import { number } from "./number";
+import { number, string } from "./";
+import { sequenceOf } from "../combinators";
 import { ParserState } from "../ParserState";
 
 describe("number", () => {
   test("Parse a matchable input", () => {
-    const parser = number(2011);
+    const parserString = string("Hello");
+    const parserNumber = number(2011);
 
-    const result = parser.run("2011");
+    const parser = sequenceOf([parserString, parserNumber]);
+
+    const result = parser.run("Hello2011");
 
     expect(result).toStrictEqual<ParserState>({
-      input: "2011",
+      input: "Hello2011",
       isError: false,
-      offset: 4,
-      result: "2011",
+      offset: 9,
+      result: ["Hello", "2011"],
     });
   });
 
