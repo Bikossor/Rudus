@@ -3,6 +3,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
 
 /**
  * Checks if there is nothing left to parse otherwise it fails.
+ * @see https://rudus.pages.dev/docs/api/parsers/endOfInput
  */
 export const endOfInput = () =>
   new Parser((state: ParserState): ParserState => {

@@ -3,6 +3,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
 
 /**
  * Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
+ * @see https://rudus.pages.dev/docs/api/parsers/whitespace
  */
 export const whitespace = () =>
   new Parser((state: ParserState): ParserState => {

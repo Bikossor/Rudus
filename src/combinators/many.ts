@@ -4,6 +4,7 @@ import { ParserState, updateParserResult } from "../ParserState";
 
 /**
  * Accepts a single parser, which may match zero or infinite times.
+ * @see https://rudus.pages.dev/docs/api/combinators/many
  * @param parser
  */
 export const many = (parser: Parser) =>

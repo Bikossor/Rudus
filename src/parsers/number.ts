@@ -4,6 +4,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
 /**
  * Tries to match a given number.
  * @param searchString
+ * @see https://rudus.pages.dev/docs/api/parsers/number
  */
 export const number = (searchString: number) =>
   new Parser((state: ParserState): ParserState => {
