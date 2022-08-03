@@ -32,6 +32,8 @@
   - Tries to match an end of line (either `\r\n`, `\r` or `\n`)
 - `lazy`
   - Takes a function that just returns a parser _(a thunk)_. This defers the evaluation of the given parser. Useful for writing recursive parsers.
+- `failure`
+  - Always returns a failing parser with the given `errorMessage`. Typically used inside a contextual parser.
 
 ### Combinators
 
