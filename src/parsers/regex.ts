@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { updateParserError, updateParserState } from "../ParserState";
 
 /**
  * Tries to match a given regex.
@@ -7,7 +7,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
  * @see https://rudus.pages.dev/docs/api/parsers/regex
  */
 export const regex = (searchString: RegExp) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     const [fullMatch] = searchString.exec(state.input.slice(state.offset)) || [null];
 
     if (fullMatch === null) {

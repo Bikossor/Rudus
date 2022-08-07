@@ -1,12 +1,12 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { updateParserError, updateParserState } from "../ParserState";
 
 /**
  * Tries to match an end of line (either `\r\n`, `\r` or `\n`)
  * @see https://rudus.pages.dev/docs/api/parsers/endOfLine
  */
 export const endOfLine = () =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     const endOfLineRegex = new RegExp(/(\r\n|\r|\n)/);
     const [fullMatch] = endOfLineRegex.exec(state.input.slice(state.offset)) || [null];
 

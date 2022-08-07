@@ -8,7 +8,7 @@ import { ParserState, updateParserResult, updateParserError } from "../ParserSta
  * @see https://rudus.pages.dev/docs/api/combinators/many1
  */
 export const many1 = (parser: Parser) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;
     let done = false;

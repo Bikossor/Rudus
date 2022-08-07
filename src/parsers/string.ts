@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { updateParserError, updateParserState } from "../ParserState";
 
 /**
  * Tries to match a given string.
@@ -7,7 +7,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
  * @see https://rudus.pages.dev/docs/api/parsers/string
  */
 export const string = (searchString: string) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     const matched = state.input.slice(state.offset).startsWith(searchString);
 
     if (!matched)

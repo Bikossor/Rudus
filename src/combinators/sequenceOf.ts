@@ -8,7 +8,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
  * @see https://rudus.pages.dev/docs/api/combinators/sequenceOf
  */
 export const sequenceOf = (parsers: Array<Parser>) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     let i = 0;
     const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;

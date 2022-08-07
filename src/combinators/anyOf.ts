@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Tries to match all `parsers` and returns the first successful one.
@@ -7,7 +7,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
  * @see https://rudus.pages.dev/docs/api/combinators/anyOf
  */
 export const anyOf = (parsers: Array<Parser>) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     if (state.isError) return state;
 
     for (const parser of parsers) {
