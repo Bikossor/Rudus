@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * - Tries to match a given `value` separated by a given `separator`
@@ -9,7 +9,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
  * @see https://rudus.pages.dev/docs/api/combinators/separatedBy
  */
 export const separatedBy = (separator: Parser) => (value: Parser) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     //#region value: Parser
     const valueParserState = value.transformState(state);
 

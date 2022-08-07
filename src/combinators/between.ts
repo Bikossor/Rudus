@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
@@ -8,7 +8,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
 export const between =
   (outerLeft: Parser, outerRight: Parser = outerLeft) =>
   (inner: Parser) =>
-    new Parser((state: ParserState): ParserState => {
+    new Parser(state => {
       //#region outerLeft: Parser
       const outerLeftParserState = outerLeft.transformState(state);
 

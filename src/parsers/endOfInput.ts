@@ -1,12 +1,12 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserResult } from "../ParserState";
+import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Checks if there is nothing left to parse otherwise it fails.
  * @see https://rudus.pages.dev/docs/api/parsers/endOfInput
  */
 export const endOfInput = () =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     if (state.input.slice(state.offset) !== "") {
       return updateParserError(
         state,

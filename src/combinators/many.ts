@@ -8,7 +8,7 @@ import { ParserState, updateParserResult } from "../ParserState";
  * @param parser
  */
 export const many = (parser: Parser) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     if (state.isError) return state;
 
     const results: Array<ParserStateResult> = [];

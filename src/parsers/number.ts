@@ -1,5 +1,5 @@
 import { Parser } from "../Parser";
-import { ParserState, updateParserError, updateParserState } from "../ParserState";
+import { updateParserError, updateParserState } from "../ParserState";
 
 /**
  * Tries to match a given number.
@@ -7,7 +7,7 @@ import { ParserState, updateParserError, updateParserState } from "../ParserStat
  * @see https://rudus.pages.dev/docs/api/parsers/number
  */
 export const number = (searchString: number) =>
-  new Parser((state: ParserState): ParserState => {
+  new Parser(state => {
     const asString = searchString.toString();
     const matched = state.input.slice(state.offset).startsWith(asString);
 
