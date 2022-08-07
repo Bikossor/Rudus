@@ -6,8 +6,7 @@ import { Parser } from "../Parser";
  * @returns
  * @see https://rudus.pages.dev/docs/api/parsers/lazy
  */
-export const lazy = (parserThunk: () => Parser): Parser => {
-  return new Parser(state => {
+export const lazy = (parserThunk: () => Parser): Parser =>
+  new Parser(state => {
     return parserThunk().transformState(state);
   });
-};
