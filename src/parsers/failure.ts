@@ -6,9 +6,8 @@ import { updateParserError } from "../ParserState";
  * @param errorMessage
  * @returns
  */
-export const failure = (errorMessage: string) => {
-  return new Parser(state => {
+export const failure = (errorMessage: string) =>
+  new Parser(state => {
     if (state.isError) return state;
     return updateParserError(state, errorMessage);
   });
-};
