@@ -12,10 +12,6 @@ const whitespace: () => Parser;
 
 In this example we are going to parse a [newline](https://en.wikipedia.org/wiki/Newline) (`\n`), an arbitrary word followed by another newline.
 
-:::note
-In the real world you won't see the actual `\n` char.
-:::
-
 ```ts
 import { sequenceOf, whitespace, word } from "rudus";
 
