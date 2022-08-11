@@ -1,3 +1,34 @@
 # lazy
 
 Takes a function that just returns a parser _(a thunk)_. This defers the evaluation of the given parser. Useful for writing recursive parsers.
+
+## Type declaration
+
+```ts
+const lazy: (parserThunk: () => Parser) => Parser;
+```
+
+## Example
+
+In this example we are going to define a `parser` before it's declaration.
+
+```ts
+import { lazy, string } from "rudus";
+
+const parser = lazy(() => helloParser));
+
+const helloParser = string("Hello");
+
+const result = parser.run(`Hello`);
+```
+
+The `result` of the parser above will be:
+
+```json
+{
+  "input": "Hello",
+  "isError": false,
+  "offset": 5,
+  "result": "Hello"
+}
+```
