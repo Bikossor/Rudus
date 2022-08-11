@@ -1,3 +1,32 @@
 # string
 
 Tries to match a given string.
+
+## Type declaration
+
+```ts
+const string: (searchString: string) => Parser;
+```
+
+## Example
+
+In this example we are going to parse two arbitrary words separated by a space.
+
+```ts
+import { sequenceOf, whitespace, word } from "rudus";
+
+const parser = sequenceOf([whitespace(), word(), whitespace()]);
+
+const result = parser.run(`\nHello\n`);
+```
+
+The `result` of the parser above will be:
+
+```json
+{
+  "input": "\nHello World\n",
+  "isError": false,
+  "offset": 7,
+  "result": ["\n", "Hello", "\n"]
+}
+```
