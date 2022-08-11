@@ -1,3 +1,32 @@
 # number
 
 Tries to match a given number.
+
+## Type declaration
+
+```ts
+const number: (searchString: number) => Parser;
+```
+
+## Example
+
+In this example we are going to parse the number `1337`.
+
+```ts
+import { number } from "rudus";
+
+const parser = number(1337);
+
+const result = parser.run(`1337`);
+```
+
+The `result` of the parser above will be:
+
+```json
+{
+  "input": "1337",
+  "isError": false,
+  "offset": 4,
+  "result": "1337"
+}
+```
