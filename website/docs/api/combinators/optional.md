@@ -1,3 +1,32 @@
 # optional
 
 The given `parser` may or may not match. This combinator can not fail.
+
+## Type declaration
+
+```ts
+const optional: (parser: Parser) => Parser;
+```
+
+## Example
+
+In this example we are going to parse the string `"Hello"` which may not be present.
+
+```ts
+import { optional, string } from "rudus";
+
+const parser = optional(string("Hello"));
+
+const result = parser.run("World");
+```
+
+The `result` of the parser above will be:
+
+```json
+{
+  "input": "World",
+  "isError": false,
+  "offset": 0,
+  "result": null
+}
+```
