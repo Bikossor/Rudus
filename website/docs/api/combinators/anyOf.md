@@ -10,7 +10,7 @@ const anyOf: (parsers: Array<Parser>) => Parser;
 
 ## Example
 
-In this example we are going to parse either a `Hello` or a `World`.
+In this example we are going to parse either the string `"Hello"` or `"World"`.
 
 ```ts
 import { anyOf, string } from "rudus";

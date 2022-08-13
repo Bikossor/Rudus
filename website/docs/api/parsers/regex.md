@@ -10,7 +10,7 @@ const regex: (searchString: RegExp) => Parser;
 
 ## Example
 
-In this example we are going to parse the strings `Hello` and `Hallo` using the same parser.
+In this example we are going to parse the strings `"Hello"` and `"Hallo"` using the same parser.
 
 ```ts
 import { regex, sequenceOf, whitespace } from "rudus";

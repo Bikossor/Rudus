@@ -10,7 +10,7 @@ const endOfInput: () => Parser;
 
 ## Example
 
-In this example we are going to parser a `Hello` followed by a newline.
+In this example we are going to parser the string `"Hello"` followed by a newline.
 
 ```ts
 import { endOfInput, sequenceOf, string } from "rudus";
