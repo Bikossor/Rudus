@@ -2,6 +2,10 @@
 
 The given `parser` may or may not match. This combinator can not fail.
 
+:::info
+Available since: `v1.0.0-alpha.4`
+:::
+
 ## Type declaration
 
 ```ts

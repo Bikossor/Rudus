@@ -2,6 +2,10 @@
 
 Tries to match a given regex.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

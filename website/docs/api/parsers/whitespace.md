@@ -2,6 +2,10 @@
 
 Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

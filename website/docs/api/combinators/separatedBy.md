@@ -2,6 +2,10 @@
 
 Tries to match a given `value` separated by a given `separator`.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

@@ -2,6 +2,10 @@
 
 Tries to match an end of line (either `\r\n`, `\r` or `\n`)
 
+:::info
+Available since: `v1.0.0-alpha.3`
+:::
+
 ## Type declaration
 
 ```ts

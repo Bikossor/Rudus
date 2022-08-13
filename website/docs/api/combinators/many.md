@@ -2,6 +2,10 @@
 
 Accepts a single parser, which may match zero or infinite times.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

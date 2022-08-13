@@ -2,6 +2,10 @@
 
 Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`).
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

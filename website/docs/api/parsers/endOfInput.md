@@ -2,6 +2,10 @@
 
 Checks if there is nothing left to parse otherwise it fails.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

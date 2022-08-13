@@ -2,6 +2,10 @@
 
 Tries to match all `parsers` and returns the first successful one.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts

@@ -2,6 +2,10 @@
 
 Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
 
+:::info
+Available since: `v1.0.0-alpha.4`
+:::
+
 ## Type declaration
 
 ```ts

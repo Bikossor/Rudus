@@ -2,6 +2,10 @@
 
 Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.
 
+:::info
+Available since: `v1.0.0-alpha.1`
+:::
+
 ## Type declaration
 
 ```ts
