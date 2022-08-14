@@ -1,0 +1,7 @@
+# ParserStateResult
+
+## Type declaration
+
+```ts
+type ParserStateResult = string | null | ParserStateResult[];
+```

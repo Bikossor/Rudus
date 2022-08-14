@@ -2,6 +2,10 @@
 
 Always returns a failing parser with the given `errorMessage`. Typically used inside a contextual parser.
 
+:::info
+Available since: `v1.0.0-alpha.10`
+:::
+
 ## Type declaration
 
 ```ts
