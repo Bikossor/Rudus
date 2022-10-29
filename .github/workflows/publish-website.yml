@@ -1,0 +1,33 @@
+on:
+  push:
+    paths:
+      - "/website"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build website
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+        working-directory: "/website"
+        run: |
+          npm i
+          npm run build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: rudus
+          directory: "/website"
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
