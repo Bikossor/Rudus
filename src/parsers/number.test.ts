@@ -32,4 +32,24 @@ describe("number", () => {
       result: null,
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = number(2011);
+
+    const result = parser.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

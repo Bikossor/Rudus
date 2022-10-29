@@ -28,4 +28,24 @@ describe("whitespace", () => {
       result: null,
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = whitespace();
+
+    const result = parser.transformState({
+      input: "incoming result",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming result",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

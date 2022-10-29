@@ -28,4 +28,24 @@ describe("string", () => {
       result: null,
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = string("Hello");
+
+    const result = parser.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

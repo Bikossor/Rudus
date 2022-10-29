@@ -75,4 +75,25 @@ describe("separatedBy", () => {
       result: null,
     });
   });
+
+  it("should return an incoming error", () => {
+    const commaSeparated = separatedBy(regex(/\,/));
+    const parser = commaSeparated(regex(/[a-zA-Z]+/));
+
+    const result = parser.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });
