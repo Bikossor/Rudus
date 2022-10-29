@@ -1,3 +1,5 @@
+name: Publish Website to Cloudflare Pages
+
 on:
   push:
     paths:
