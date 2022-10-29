@@ -10,8 +10,12 @@ updates:
     schedule:
       interval: "weekly"
       day: "thursday"
+    labels:
+      - "dependencies: npm"
   - package-ecosystem: "github-actions"
     directory: "/.github"
     schedule:
       interval: "weekly"
       day: "thursday"
+    labels:
+      - "dependencies: gh-actions"
