@@ -8,5 +8,6 @@ import { Parser } from "../Parser";
  */
 export const lazy = (parserThunk: () => Parser): Parser =>
   new Parser(state => {
+    if (state.isError) return state;
     return parserThunk().transformState(state);
   });

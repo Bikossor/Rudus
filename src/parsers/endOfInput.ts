@@ -7,6 +7,8 @@ import { updateParserError, updateParserResult } from "../ParserState";
  */
 export const endOfInput = () =>
   new Parser(state => {
+    if (state.isError) return state;
+
     if (state.input.slice(state.offset) !== "") {
       return updateParserError(
         state,

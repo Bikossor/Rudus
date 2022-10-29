@@ -10,6 +10,8 @@ import { updateParserError, updateParserResult } from "../ParserState";
  */
 export const separatedBy = (separator: Parser) => (value: Parser) =>
   new Parser(state => {
+    if (state.isError) return state;
+
     //#region value: Parser
     const valueParserState = value.transformState(state);
 

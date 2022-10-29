@@ -9,6 +9,8 @@ export const between =
   (outerLeft: Parser, outerRight: Parser = outerLeft) =>
   (inner: Parser) =>
     new Parser(state => {
+      if (state.isError) return state;
+
       //#region outerLeft: Parser
       const outerLeftParserState = outerLeft.transformState(state);
 
