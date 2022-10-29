@@ -22,4 +22,24 @@ describe("lazy", () => {
       result: ["12", "34", "HELLO"],
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = lazy(() => anyOf([string("1"), string("2")]));
+
+    const result = parser.transformState({
+      input: "HelloHelloHelloHello",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "testing",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "HelloHelloHelloHello",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "testing",
+    });
+  });
 });

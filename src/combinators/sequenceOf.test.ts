@@ -29,4 +29,24 @@ describe("sequenceOf", () => {
       result: "Hello",
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = sequenceOf([string("Hello"), whitespace(), string("world")]);
+
+    const result = parser.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

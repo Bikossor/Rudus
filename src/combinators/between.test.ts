@@ -75,4 +75,25 @@ describe("between", () => {
       errorMessage: "between: outerRight parser failed to match at offset 6",
     });
   });
+
+  it("should return an incoming error", () => {
+    const betweenQuotes = between(string('"'));
+    const helloBetweenQuotes = betweenQuotes(string("Hello"));
+
+    const result = helloBetweenQuotes.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

@@ -8,6 +8,8 @@ import { updateParserError, updateParserState } from "../ParserState";
  */
 export const regex = (searchString: RegExp) =>
   new Parser(state => {
+    if (state.isError) return state;
+
     const [fullMatch] = searchString.exec(state.input.slice(state.offset)) || [null];
 
     if (fullMatch === null) {

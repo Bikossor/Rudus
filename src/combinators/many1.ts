@@ -9,6 +9,8 @@ import { ParserState, updateParserResult, updateParserError } from "../ParserSta
  */
 export const many1 = (parser: Parser) =>
   new Parser(state => {
+    if (state.isError) return state;
+
     const results: Array<ParserStateResult> = [];
     let nextState: ParserState = state;
     let done = false;

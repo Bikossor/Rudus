@@ -42,4 +42,24 @@ describe("anyOf", () => {
       result: null,
     });
   });
+
+  it("should return an incoming error", () => {
+    const parser = anyOf([string("Hello"), string("World")]);
+
+    const result = parser.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

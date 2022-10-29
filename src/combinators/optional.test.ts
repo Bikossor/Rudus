@@ -37,4 +37,24 @@ describe("optional", () => {
       result: ["Hello", " ", "World"],
     });
   });
+
+  it("should return an incoming error", () => {
+    const optionalWhitespace = optional(whitespace());
+
+    const result = optionalWhitespace.transformState({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+
+    expect(result).toStrictEqual<ParserState>({
+      input: "incoming input",
+      isError: true,
+      offset: 10,
+      result: "",
+      errorMessage: "incoming errorMessage",
+    });
+  });
 });

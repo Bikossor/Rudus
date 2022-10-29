@@ -7,6 +7,8 @@ import { updateParserError, updateParserState } from "../ParserState";
  */
 export const word = () =>
   new Parser(state => {
+    if (state.isError) return state;
+
     const regexWord = /\w+/;
     const [fullMatch] = regexWord.exec(state.input.slice(state.offset)) || [null];
 

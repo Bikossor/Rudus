@@ -9,6 +9,8 @@ import { updateParserResult } from "../ParserState";
  */
 export const optional = (parser: Parser): Parser =>
   new Parser(currentState => {
+    if (currentState.isError) return currentState;
+
     // Try to transform the current state with the given parser.
     const nextState = parser.transformState(currentState);
 

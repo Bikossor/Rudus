@@ -7,6 +7,8 @@ import { updateParserError, updateParserState } from "../ParserState";
  */
 export const whitespace = () =>
   new Parser(state => {
+    if (state.isError) return state;
+
     const regexWhitespace = /\s+/;
     const [fullMatch] = regexWhitespace.exec(state.input.slice(state.offset)) || [null];
 

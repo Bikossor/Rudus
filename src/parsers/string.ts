@@ -8,6 +8,8 @@ import { updateParserError, updateParserState } from "../ParserState";
  */
 export const string = (searchString: string) =>
   new Parser(state => {
+    if (state.isError) return state;
+
     const matched = state.input.slice(state.offset).startsWith(searchString);
 
     if (!matched)
