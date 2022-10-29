@@ -15,7 +15,7 @@ updates:
     reviewers:
       - "bikossor"
   - package-ecosystem: "github-actions"
-    directory: "/.github"
+    directory: "/"
     schedule:
       interval: "weekly"
       day: "thursday"
