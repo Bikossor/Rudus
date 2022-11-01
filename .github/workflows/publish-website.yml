@@ -33,5 +33,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: rudus
-          directory: "dist"
+          directory: "website/build"
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
