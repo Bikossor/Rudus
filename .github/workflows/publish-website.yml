@@ -1,6 +1,9 @@
 name: Publish Website to Cloudflare Pages
 
-on: pull_request_target
+on:
+  push:
+    paths:
+      - "website/**"
 
 jobs:
   publish:
