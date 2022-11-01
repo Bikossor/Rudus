@@ -1,7 +1,9 @@
 name: Publish Website to Cloudflare Pages
 
 on:
-  push:
+  pull_request:
+    types:
+      - edited
     paths:
       - "website/**"
 
