@@ -1,4 +1,4 @@
-name: Publish Website to Cloudflare Pages
+name: Publish Website
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Publish to Cloudflare Pages
+    name: Publish Website
     steps:
       - name: Checkout
         uses: actions/checkout@v3
