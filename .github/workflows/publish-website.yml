@@ -22,7 +22,7 @@ jobs:
           node-version: 18.x
 
       - name: Build website
-        working-directory: "/website"
+        working-directory: "website"
         run: |
           npm i
           npm run build
