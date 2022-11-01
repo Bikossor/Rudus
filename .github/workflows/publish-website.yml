@@ -1,11 +1,6 @@
 name: Publish Website to Cloudflare Pages
 
-on:
-  pull_request:
-    types:
-      - edited
-    paths:
-      - "website/**"
+on: pull_request_target
 
 jobs:
   publish:
