@@ -1,6 +1,6 @@
 {
   "name": "rudus",
-  "version": "v1.0.0-alpha.11",
+  "version": "v1.0.0-alpha.12",
   "description": "Parser combinator library for TypeScript",
   "files": [
     "dist/"
