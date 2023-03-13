@@ -7,7 +7,7 @@ import { ParserState, updateParserResult, updateParserError } from "../ParserSta
  * @param parser
  * @see https://rudus.pages.dev/docs/api/combinators/many1
  */
-export const many1 = (parser: Parser) =>
+export const many1 = (parser: Parser, name = "many1") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -29,9 +29,9 @@ export const many1 = (parser: Parser) =>
     if (!results.length) {
       return updateParserError(
         state,
-        `many1: Failed to match at least once at offset ${state.offset}`,
+        `${name}: Failed to match at least once at offset ${state.offset}`,
       );
     }
 
     return updateParserResult(nextState, results);
-  });
+  }, name);

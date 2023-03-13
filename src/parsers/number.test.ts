@@ -27,7 +27,7 @@ describe("number", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "4022",
       isError: true,
-      errorMessage: "Failed to match number 2011 at offset 0",
+      errorMessage: "number: failed to match number 2011 at offset 0",
       offset: 0,
       result: null,
     });

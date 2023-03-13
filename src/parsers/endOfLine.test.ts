@@ -23,7 +23,7 @@ describe("endOfLine", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "",
       isError: true,
-      errorMessage: "Failed to match end of line at offset 0",
+      errorMessage: "endOfLine: failed to match end of line at offset 0",
       offset: 0,
       result: null,
     });

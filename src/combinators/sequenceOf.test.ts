@@ -24,7 +24,7 @@ describe("sequenceOf", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "Helloworld",
       isError: true,
-      errorMessage: "Failed to match whitespace /\\s+/ at offset 5",
+      errorMessage: "whitespace: failed to match whitespace /\\s+/ at offset 5",
       offset: 5,
       result: "Hello",
     });

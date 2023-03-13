@@ -5,7 +5,7 @@ import { updateParserError, updateParserState } from "../ParserState";
  * Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`).
  * @see https://rudus.pages.dev/docs/api/parsers/word
  */
-export const word = () =>
+export const word = (name = "word") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -15,9 +15,9 @@ export const word = () =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match word ${regexWord.toString()} at offset ${state.offset.toString()}`,
+        `${name}: failed to match word ${regexWord.toString()} at offset ${state.offset.toString()}`,
       );
     }
 
     return updateParserState(state, state.offset + fullMatch.length, fullMatch);
-  });
+  }, name);

@@ -5,7 +5,7 @@ import { updateParserError, updateParserState } from "../ParserState";
  * Tries to match one or more whitespaces (regex: `/[\r\n\t\f\v ]+/`).
  * @see https://rudus.pages.dev/docs/api/parsers/whitespace
  */
-export const whitespace = () =>
+export const whitespace = (name = "whitespace") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -15,9 +15,9 @@ export const whitespace = () =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match whitespace ${regexWhitespace.toString()} at offset ${state.offset.toString()}`,
+        `${name}: failed to match whitespace ${regexWhitespace.toString()} at offset ${state.offset.toString()}`,
       );
     }
 
     return updateParserState(state, state.offset + fullMatch.length, fullMatch);
-  });
+  }, name);

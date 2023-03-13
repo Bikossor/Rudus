@@ -23,7 +23,7 @@ describe("word", () => {
     expect(result).toStrictEqual<ParserState>({
       input: " ",
       isError: true,
-      errorMessage: "Failed to match word /\\w+/ at offset 0",
+      errorMessage: "word: failed to match word /\\w+/ at offset 0",
       offset: 0,
       result: null,
     });

@@ -6,7 +6,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
  * @param parsers
  * @see https://rudus.pages.dev/docs/api/combinators/anyOf
  */
-export const anyOf = (parsers: Array<Parser>) =>
+export const anyOf = (parsers: Array<Parser>, name = "anyOf") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -18,5 +18,5 @@ export const anyOf = (parsers: Array<Parser>) =>
       }
     }
 
-    return updateParserError(state, "anyOf: unable to match any given parser");
-  });
+    return updateParserError(state, `${name}: unable to match any given parser`);
+  }, name);

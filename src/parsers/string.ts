@@ -6,7 +6,7 @@ import { updateParserError, updateParserState } from "../ParserState";
  * @param searchString
  * @see https://rudus.pages.dev/docs/api/parsers/string
  */
-export const string = (searchString: string) =>
+export const string = (searchString: string, name = "string") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -15,8 +15,8 @@ export const string = (searchString: string) =>
     if (!matched)
       return updateParserError(
         state,
-        `Failed to match string ${searchString} at offset ${state.offset}`,
+        `${name}: failed to match string ${searchString} at offset ${state.offset}`,
       );
 
     return updateParserState(state, state.offset + searchString.length, searchString);
-  });
+  }, name);

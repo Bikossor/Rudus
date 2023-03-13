@@ -23,7 +23,7 @@ describe("string", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "World",
       isError: true,
-      errorMessage: "Failed to match string Hello at offset 0",
+      errorMessage: "string: failed to match string Hello at offset 0",
       offset: 0,
       result: null,
     });

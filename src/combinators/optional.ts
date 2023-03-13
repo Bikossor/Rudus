@@ -7,7 +7,7 @@ import { updateParserResult } from "../ParserState";
  * @returns
  * @see https://rudus.pages.dev/docs/api/combinators/optional
  */
-export const optional = (parser: Parser): Parser =>
+export const optional = (parser: Parser, name = "optional"): Parser =>
   new Parser(currentState => {
     if (currentState.isError) return currentState;
 
@@ -19,4 +19,4 @@ export const optional = (parser: Parser): Parser =>
 
     // If the given parser can match return the transformed state.
     return nextState;
-  });
+  }, name);

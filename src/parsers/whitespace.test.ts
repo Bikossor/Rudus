@@ -23,7 +23,7 @@ describe("whitespace", () => {
     expect(result).toStrictEqual<ParserState>({
       input: "World",
       isError: true,
-      errorMessage: "Failed to match whitespace /\\s+/ at offset 0",
+      errorMessage: "whitespace: failed to match whitespace /\\s+/ at offset 0",
       offset: 0,
       result: null,
     });
