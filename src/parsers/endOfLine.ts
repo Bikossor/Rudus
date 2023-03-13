@@ -5,7 +5,7 @@ import { updateParserError, updateParserState } from "../ParserState";
  * Tries to match an end of line (either `\r\n`, `\r` or `\n`)
  * @see https://rudus.pages.dev/docs/api/parsers/endOfLine
  */
-export const endOfLine = () =>
+export const endOfLine = (name = "endOfLine") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -15,9 +15,9 @@ export const endOfLine = () =>
     if (fullMatch === null) {
       return updateParserError(
         state,
-        `Failed to match end of line at offset ${state.offset.toString()}`,
+        `${name}: failed to match end of line at offset ${state.offset.toString()}`,
       );
     }
 
     return updateParserState(state, state.offset + fullMatch.length, "<EOL>");
-  });
+  }, name);

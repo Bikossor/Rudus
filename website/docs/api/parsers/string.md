@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const string: (searchString: string) => Parser;
+const string: (searchString: string, name?: string) => Parser;
 ```
 
 ## Example

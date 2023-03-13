@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.4`
 ## Type declaration
 
 ```ts
-const optional: (parser: Parser) => Parser;
+const optional: (parser: Parser, name?: string) => Parser;
 ```
 
 ## Example

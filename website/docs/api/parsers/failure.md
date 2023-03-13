@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.10`
 ## Type declaration
 
 ```ts
-const failure: (errorMessage: string) => Parser;
+const failure: (errorMessage: string, name?: string) => Parser;
 ```
 
 ## Example

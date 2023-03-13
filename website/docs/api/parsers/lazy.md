@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.3`
 ## Type declaration
 
 ```ts
-const lazy: (parserThunk: () => Parser) => Parser;
+const lazy: (parserThunk: () => Parser, name?: string) => Parser;
 ```
 
 ## Example

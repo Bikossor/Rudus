@@ -9,7 +9,10 @@ Available since: `v1.0.0-alpha.4`
 ## Type declaration
 
 ```ts
-const between: (outerLeft: Parser, outerRight?: Parser) => (inner: Parser) => Parser;
+const between: (
+  outerLeft: Parser,
+  outerRight?: Parser,
+) => (inner: Parser, name?: string) => Parser;
 ```
 
 ## Example

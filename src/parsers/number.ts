@@ -6,7 +6,7 @@ import { updateParserError, updateParserState } from "../ParserState";
  * @param searchString
  * @see https://rudus.pages.dev/docs/api/parsers/number
  */
-export const number = (searchString: number) =>
+export const number = (searchString: number, name = "number") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -16,7 +16,7 @@ export const number = (searchString: number) =>
     if (!matched) {
       return updateParserError(
         state,
-        `Failed to match number ${searchString} at offset ${state.offset}`,
+        `${name}: failed to match number ${searchString} at offset ${state.offset}`,
       );
     }
 
@@ -25,4 +25,4 @@ export const number = (searchString: number) =>
       state.offset + searchString.toString().length,
       searchString.toString(),
     );
-  });
+  }, name);

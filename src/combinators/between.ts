@@ -7,7 +7,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
  */
 export const between =
   (outerLeft: Parser, outerRight: Parser = outerLeft) =>
-  (inner: Parser) =>
+  (inner: Parser, name = "between") =>
     new Parser(state => {
       if (state.isError) return state;
 
@@ -17,7 +17,7 @@ export const between =
       if (outerLeftParserState.isError) {
         return updateParserError(
           state,
-          `between: outerLeft parser failed to match at offset ${outerLeftParserState.offset}`,
+          `${name}: outerLeft parser failed to match at offset ${outerLeftParserState.offset}`,
         );
       }
       //#endregion
@@ -28,7 +28,7 @@ export const between =
       if (innerParserState.isError) {
         return updateParserError(
           state,
-          `between: inner parser failed to match at offset ${innerParserState.offset}`,
+          `${name}: inner parser failed to match at offset ${innerParserState.offset}`,
         );
       }
       //#endregion
@@ -39,7 +39,7 @@ export const between =
       if (outerRightParserState.isError) {
         return updateParserError(
           state,
-          `between: outerRight parser failed to match at offset ${outerRightParserState.offset}`,
+          `${name}: outerRight parser failed to match at offset ${outerRightParserState.offset}`,
         );
       }
       //#endregion
@@ -49,4 +49,4 @@ export const between =
         innerParserState.result,
         outerRightParserState.result,
       ]);
-    });
+    }, name);

@@ -7,8 +7,8 @@ import { updateParserError } from "../ParserState";
  * @returns
  * @see https://rudus.pages.dev/docs/api/parsers/failure
  */
-export const failure = (errorMessage: string) =>
+export const failure = (errorMessage: string, name = "failure") =>
   new Parser(state => {
     if (state.isError) return state;
     return updateParserError(state, errorMessage);
-  });
+  }, name);

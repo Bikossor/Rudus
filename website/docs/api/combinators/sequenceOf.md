@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const sequenceOf: (parsers: Array<Parser>) => Parser;
+const sequenceOf: (parsers: Array<Parser>, name?: string) => Parser;
 ```
 
 ## Example

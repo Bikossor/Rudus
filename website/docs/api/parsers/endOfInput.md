@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const endOfInput: () => Parser;
+const endOfInput: (name?: string) => Parser;
 ```
 
 ## Example

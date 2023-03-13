@@ -4,9 +4,11 @@ import { ParserState, updateParserResult } from "./ParserState";
 
 export class Parser {
   transformState: LikeParser;
+  readonly name: string;
 
-  constructor(stateTransformer: LikeParser) {
+  constructor(stateTransformer: LikeParser, name: string) {
     this.transformState = stateTransformer;
+    this.name = name;
   }
 
   run(input: string) {
@@ -22,6 +24,6 @@ export class Parser {
     return new Parser(parserState => {
       const nextState = this.transformState(parserState);
       return updateParserResult(nextState, callback(nextState));
-    });
+    }, this.name);
   }
 }

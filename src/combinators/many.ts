@@ -7,7 +7,7 @@ import { ParserState, updateParserResult } from "../ParserState";
  * @see https://rudus.pages.dev/docs/api/combinators/many
  * @param parser
  */
-export const many = (parser: Parser) =>
+export const many = (parser: Parser, name = "many") =>
   new Parser(state => {
     if (state.isError) return state;
 
@@ -30,4 +30,4 @@ export const many = (parser: Parser) =>
     }
 
     return updateParserResult(nextState, results);
-  });
+  }, name);
