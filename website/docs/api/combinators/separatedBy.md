@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const separatedBy: (separator: Parser) => (value: Parser) => Parser;
+const separatedBy: (separator: Parser) => (value: Parser, name?: string) => Parser;
 ```
 
 ## Example

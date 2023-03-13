@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const regex: (searchString: RegExp) => Parser;
+const regex: (searchString: RegExp, name?: string) => Parser;
 ```
 
 ## Example

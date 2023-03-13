@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const anyOf: (parsers: Array<Parser>) => Parser;
+const anyOf: (parsers: Array<Parser>, name?: string) => Parser;
 ```
 
 ## Example

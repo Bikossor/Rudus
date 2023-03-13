@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const whitespace: () => Parser;
+const whitespace: (name?: string) => Parser;
 ```
 
 ## Example

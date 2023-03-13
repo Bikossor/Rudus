@@ -9,7 +9,7 @@ Available since: `v1.0.0-alpha.1`
 ## Type declaration
 
 ```ts
-const many: (parser: Parser) => Parser;
+const many: (parser: Parser, name?: string) => Parser;
 ```
 
 ## Example
