@@ -1,15 +1,15 @@
 # everythingUntil
 
-Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
+Tries to match everything until (`value`) the separator.
 
 :::info
-Available since: `v1.0.0-alpha.12`
+Available since: `v1.0.0-alpha.13`
 :::
 
 ## Type declaration
 
 ```ts
-const everythingUntil: (separator: Parser) => (value: Parser) => Parser;
+const everythingUntil: (separator: Parser) => (value: Parser, name?: string) => Parser;
 ```
 
 ## Example
