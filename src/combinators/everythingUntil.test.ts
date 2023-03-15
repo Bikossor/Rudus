@@ -3,7 +3,7 @@ import { ParserState } from "../ParserState";
 import { everythingUntil, sequenceOf } from "./";
 
 describe("everythingUntil", () => {
-  it("should work :P", () => {
+  it("should successfully match everything until a semicolon", () => {
     const everythingUntilSemicolon = everythingUntil(string(";"));
 
     const parser = everythingUntilSemicolon(
@@ -20,7 +20,7 @@ describe("everythingUntil", () => {
     });
   });
 
-  it("should work :P", () => {
+  it("should fail when the separator can not be matched", () => {
     const everythingUntilSemicolon = everythingUntil(string(";"));
 
     const parser = everythingUntilSemicolon(
@@ -30,7 +30,7 @@ describe("everythingUntil", () => {
     const result = parser.run("abcdef123");
 
     expect(result).toStrictEqual<ParserState>({
-      errorMessage: "everythingUntil: Failed to match separator at offset 9",
+      errorMessage: "everythingUntil: failed to match separator at offset 9",
       input: "abcdef123",
       isError: true,
       offset: 9,
@@ -38,7 +38,7 @@ describe("everythingUntil", () => {
     });
   });
 
-  it("should work :P", () => {
+  it("should fail when the value can not be matched", () => {
     const everythingUntilSemicolon = everythingUntil(string(";"));
 
     const parser = everythingUntilSemicolon(string("no"));
@@ -46,7 +46,7 @@ describe("everythingUntil", () => {
     const result = parser.run("yes;");
 
     expect(result).toStrictEqual<ParserState>({
-      errorMessage: "everythingUntil: Failed to match string no at offset 0",
+      errorMessage: "everythingUntil: string: failed to match string no at offset 0",
       input: "yes;",
       isError: true,
       offset: 0,
