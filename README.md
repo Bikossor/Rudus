@@ -52,3 +52,5 @@
   - The given `parser` may or may not match. This combinator can not fail.
 - `between`
   - Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
+- `everythingUntil`
+  - Tries to match everything until (`value`) the separator.
