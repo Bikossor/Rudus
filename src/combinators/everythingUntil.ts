@@ -2,7 +2,7 @@ import { Parser } from "../Parser";
 import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
- * Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
+ * Tries to match everything until (`value`) the separator.
  * @see https://rudus.pages.dev/docs/api/combinators/everythingUntil
  */
 export const everythingUntil =
