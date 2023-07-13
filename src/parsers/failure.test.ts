@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { ParserState } from "../ParserState";
 import { failure } from "../parsers";
 

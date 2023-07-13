@@ -1,3 +1,4 @@
+import { describe, test, expect, it } from "vitest";
 import { endOfInput } from "./endOfInput";
 import { ParserState } from "../ParserState";
 

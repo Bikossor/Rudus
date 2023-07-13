@@ -1,3 +1,4 @@
+import { describe, test, expect, it } from "vitest";
 import { anyOf, many, separatedBy } from "../combinators";
 import { lazy, regex, string } from ".";
 import { ParserState } from "../ParserState";

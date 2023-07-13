@@ -1,3 +1,4 @@
+import { describe, test, expect, it } from "vitest";
 import { string } from "./string";
 import { ParserState } from "../ParserState";
 

@@ -1,3 +1,4 @@
+import { describe, test, expect, it } from "vitest";
 import { sequenceOf } from "../combinators/index";
 import { string, whitespace } from "../parsers";
 import { ParserState } from "../ParserState";

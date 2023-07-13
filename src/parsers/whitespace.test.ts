@@ -1,3 +1,4 @@
+import { describe, test, expect, it } from "vitest";
 import { whitespace } from "./whitespace";
 import { ParserState } from "../ParserState";
 
