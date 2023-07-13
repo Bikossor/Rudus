@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { regex, string } from "../parsers";
 import { ParserState } from "../ParserState";
 import { everythingUntil, sequenceOf } from "./";
