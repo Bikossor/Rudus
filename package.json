@@ -8,8 +8,8 @@
   "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
     "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
     "prepare": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
     "prettier:write": "npx prettier --write .",
