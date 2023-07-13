@@ -1,12 +1,21 @@
 import { ParserStateResult } from "./ParserStateResult";
 
-export type ParserState = {
+export type ParserStateBase = {
   offset: number;
   input: string;
   result: ParserStateResult | null;
-  isError: boolean;
-  errorMessage?: string;
 };
+
+type ParserStateSuccess = {
+  isError: false;
+};
+
+type ParserStateError = {
+  isError: true;
+  errorMessage: string;
+};
+
+export type ParserState = ParserStateBase & (ParserStateSuccess | ParserStateError);
 
 //#region ParserState utility functions
 
