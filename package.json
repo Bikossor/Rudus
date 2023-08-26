@@ -33,7 +33,7 @@
   "homepage": "https://rudus.pages.dev",
   "devDependencies": {
     "@vitest/coverage-v8": "^0.34.2",
-    "prettier": "3.0.0",
+    "prettier": "3.0.2",
     "typescript": "^5.1.6",
     "vitest": "^0.34.2"
   }
