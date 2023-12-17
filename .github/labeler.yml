@@ -1,17 +1,23 @@
-"ci":
-  - .github/**/*
+ci:
+  - changed-files:
+      - any-glob-to-any-file: [".github/**/*"]
 
 "core: tests":
-  - any: ["src/**/*.test.ts", "src/**/*.spec.ts"]
+  - changed-files:
+      - any-glob-to-any-file: ["src/**/*.test.ts", "src/**/*.spec.ts"]
 
 "core: combinators":
-  - src/combinators/**/*
+  - changed-files:
+      - any-glob-to-any-file: ["src/combinators/**/*"]
 
 "core: parsers":
-  - src/parsers/**/*
+  - changed-files:
+      - any-glob-to-any-file: ["src/parsers/**/*"]
 
 "core: base":
-  - src/*
+  - changed-files:
+      - any-glob-to-any-file: ["src/*"]
 
-"documentation":
-  - website/**/*
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ["website/**/*"]
