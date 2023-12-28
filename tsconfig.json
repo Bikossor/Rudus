@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dist/types",
     "outDir": "dist",
     "types": ["@types/node"],
-    "moduleResolution": "Node",
-    "esModuleInterop": true
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "ESNext"
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.test.ts"]
