@@ -1,17 +1,24 @@
-"ci":
-  - any: [".github/**/*"]
+labels:
+  - name: "ci"
+    paths:
+      - .github/**/*
 
-"core: tests":
-  - any: ["src/**/*.test.ts", "src/**/*.spec.ts"]
+  - name: "core: tests"
+    paths:
+      - any: ["src/**/*.test.ts", "src/**/*.spec.ts"]
 
-"core: combinators":
-  - any: ["src/combinators/**/*"]
+  - name: "core: combinators"
+    paths:
+      - src/combinators/**/*
 
-"core: parsers":
-  - any: ["src/parsers/**/*"]
+  - name: "core: parsers"
+    paths:
+      - src/parsers/**/*
 
-"core: base":
-  - any: ["src/*"]
+  - name: "core: base"
+    paths:
+      - src/*
 
-"documentation":
-  - any: ["website/**/*"]
+  - name: "documentation"
+    paths:
+      - website/**/*
