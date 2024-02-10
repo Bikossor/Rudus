@@ -1,17 +1,17 @@
 "ci":
-  - .github/**/*
+  - any: [".github/**/*"]
 
 "core: tests":
   - any: ["src/**/*.test.ts", "src/**/*.spec.ts"]
 
 "core: combinators":
-  - src/combinators/**/*
+  - any: ["src/combinators/**/*"]
 
 "core: parsers":
-  - src/parsers/**/*
+  - any: ["src/parsers/**/*"]
 
 "core: base":
-  - src/*
+  - any: ["src/*"]
 
 "documentation":
-  - website/**/*
+  - any: ["website/**/*"]
