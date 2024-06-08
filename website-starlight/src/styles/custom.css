@@ -1,0 +1,42 @@
+:root {
+	--sl-text-xs: 0.875rem; /* 14px (default 13px) */
+  --sl-text-sm: 0.9375rem; /* 15px (default 14px) */
+}
+
+aside {
+	border-radius: 0.5rem;
+}
+
+code {
+	border-radius: 4px;
+	border: 1px solid var(--sl-color-gray-4);
+}
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #36113e;
+	--sl-color-accent: #a400c0;
+	--sl-color-accent-high: #e3b6ed;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #efecf4;
+	--sl-color-gray-2: #c4c0ca;
+	--sl-color-gray-3: #90879b;
+	--sl-color-gray-4: #5c5466;
+	--sl-color-gray-5: #3c3445;
+	--sl-color-gray-6: #2a2333;
+	--sl-color-black: #1a161e;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ebc9f3;
+	--sl-color-accent: #a700c3;
+	--sl-color-accent-high: #4e0e5b;
+	--sl-color-white: #1a161e;
+	--sl-color-gray-1: #2a2333;
+	--sl-color-gray-2: #3c3445;
+	--sl-color-gray-3: #5c5466;
+	--sl-color-gray-4: #90879b;
+	--sl-color-gray-5: #c4c0ca;
+	--sl-color-gray-6: #efecf4;
+	--sl-color-gray-7: #f7f5fa;
+	--sl-color-black: #ffffff;
+}
