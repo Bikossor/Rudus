@@ -5,7 +5,7 @@ import { ParserState, updateParserResult, updateParserError } from "../ParserSta
 /**
  * Accepts a single parser, which must match at least once or infinite times otherwise it fails.
  * @param parser
- * @see https://rudus.pages.dev/docs/api/combinators/many1
+ * @see https://rudus.pages.dev/api/combinators/many1
  */
 export const many1 = (parser: Parser, name = "many1") =>
   new Parser(state => {

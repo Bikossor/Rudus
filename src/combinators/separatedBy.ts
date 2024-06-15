@@ -6,7 +6,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
  * - Only captures the `value`
  * @param value
  * @param separator
- * @see https://rudus.pages.dev/docs/api/combinators/separatedBy
+ * @see https://rudus.pages.dev/api/combinators/separatedBy
  */
 export const separatedBy =
   (separator: Parser) =>

@@ -3,7 +3,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Tries to match everything until (`value`) the separator.
- * @see https://rudus.pages.dev/docs/api/combinators/everythingUntil
+ * @see https://rudus.pages.dev/api/combinators/everythingUntil
  */
 export const everythingUntil =
   (separator: Parser) =>

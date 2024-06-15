@@ -3,7 +3,7 @@ import { updateParserError, updateParserState } from "../ParserState";
 
 /**
  * Tries to match one or more words (regex: `/[a-zA-Z0-9_]+/`).
- * @see https://rudus.pages.dev/docs/api/parsers/word
+ * @see https://rudus.pages.dev/api/parsers/word
  */
 export const word = (name = "word") =>
   new Parser(state => {

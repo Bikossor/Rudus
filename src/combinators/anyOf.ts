@@ -4,7 +4,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
 /**
  * Tries to match all `parsers` and returns the first successful one.
  * @param parsers
- * @see https://rudus.pages.dev/docs/api/combinators/anyOf
+ * @see https://rudus.pages.dev/api/combinators/anyOf
  */
 export const anyOf = (parsers: Array<Parser>, name = "anyOf") =>
   new Parser(state => {
