@@ -5,7 +5,7 @@ import { ParserState, updateParserError, updateParserResult } from "../ParserSta
 /**
  * Accepts multiple parsers, which must all match successfully in the given order otherwise it fails.
  * @param parsers
- * @see https://rudus.pages.dev/docs/api/combinators/sequenceOf
+ * @see https://rudus.pages.dev/api/combinators/sequenceOf
  */
 export const sequenceOf = (parsers: Array<Parser>, name = "sequenceOf") =>
   new Parser(state => {

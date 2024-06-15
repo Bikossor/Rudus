@@ -5,7 +5,7 @@ import { updateParserResult } from "../ParserState";
  * The given `parser` may or may not match. This combinator can not fail.
  * @param parser
  * @returns
- * @see https://rudus.pages.dev/docs/api/combinators/optional
+ * @see https://rudus.pages.dev/api/combinators/optional
  */
 export const optional = (parser: Parser, name = "optional"): Parser =>
   new Parser(currentState => {

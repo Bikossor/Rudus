@@ -3,7 +3,7 @@ import { updateParserError, updateParserResult } from "../ParserState";
 
 /**
  * Tries to match a given `inner` surrounded by a given `outerLeft` and `outerRight`. The `outerRight` parser is optional and defaults to `outerLeft`.
- * @see https://rudus.pages.dev/docs/api/combinators/between
+ * @see https://rudus.pages.dev/api/combinators/between
  */
 export const between =
   (outerLeft: Parser, outerRight: Parser = outerLeft) =>
