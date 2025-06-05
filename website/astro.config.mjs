@@ -19,10 +19,18 @@ export default defineConfig({
         alt: "Rudus",
       },
       favicon: "./public/favicon.svg",
-      social: {
-        github: "https://github.com/Bikossor/Rudus",
-        stackOverflow: "https://stackoverflow.com/questions/tagged/Rudus",
-      },
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/Bikossor/Rudus",
+        },
+        {
+          icon: "stackOverflow",
+          label: "Stack Overflow",
+          href: "https://stackoverflow.com/questions/tagged/Rudus",
+        },
+      ],
       sidebar: [
         {
           label: "Introduction",
