@@ -34,7 +34,7 @@
   },
   "homepage": "https://rudus.pages.dev",
   "devDependencies": {
-    "@types/node": "24.9.2",
+    "@types/node": "24.10.1",
     "@vitest/coverage-v8": "4.0.5",
     "prettier": "3.6.2",
     "typescript": "5.9.3",
