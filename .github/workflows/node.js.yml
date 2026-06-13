@@ -28,10 +28,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
-      - run: cd packages/rudus
       - run: pnpm ci
+        working-directory: ./packages/rudus
       - run: pnpm run build --if-present
+        working-directory: ./packages/rudus
       - run: pnpm run test:coverage
+        working-directory: ./packages/rudus
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         env:
