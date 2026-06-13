@@ -30,7 +30,7 @@ jobs:
           cache: "pnpm"
       - run: pnpm ci
         working-directory: ./packages/rudus
-      - run: pnpm run build --if-present
+      - run: pnpm run --if-present build
         working-directory: ./packages/rudus
       - run: pnpm run test:coverage
         working-directory: ./packages/rudus
