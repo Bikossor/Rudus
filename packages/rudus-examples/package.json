@@ -1,0 +1,9 @@
+{
+  "name": "rudus-examples",
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "rudus": "workspace:rudus@*"
+  },
+  "license": "MIT"
+}
