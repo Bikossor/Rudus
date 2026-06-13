@@ -1,5 +1,5 @@
-const { whitespace, endOfInput, string } = require("rudus");
-const { sequenceOf } = require("rudus");
+import { whitespace, endOfInput, string } from "rudus";
+import { sequenceOf } from "rudus";
 
 const helloWorldParser = sequenceOf([
   string("Hello"),

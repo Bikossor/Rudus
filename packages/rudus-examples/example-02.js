@@ -2,8 +2,8 @@
  * This is just an example of a CSS parser and not perfect
  */
 
-const { regex, string, word, lazy, many1 } = require("rudus");
-const { sequenceOf } = require("rudus");
+import { regex, string, word, lazy, many1 } from "rudus";
+import { sequenceOf } from "rudus";
 
 const optionalComma = regex(/\,?/);
 const selector = regex(/[a-zA-Z0-9_.]+/);
