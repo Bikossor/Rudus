@@ -19,13 +19,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@6
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm run test:coverage
+          cache: "pnpm"
+      - run: cd packages/rudus
+      - run: pnpm ci
+      - run: pnpm run build --if-present
+      - run: pnpm run test:coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         env:
